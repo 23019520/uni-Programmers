@@ -208,44 +208,72 @@ footer-links {
     gap: 16px;
     list-style: none;
 
-}
-@media screen  and ( max-width: 520px) {
-
-    .menu-btn {
-        
-        display: block;
+}@media screen and (max-width: 768px) {
+    #main {
+        background-size: contain;
+        background-position: top center;
+        min-height: 50vh;
     }
 
-   
-    .nav-list{
-        flex-direction: column;
-        background: gray;
-        position: absolute;
+    .main-content {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .main-content .main-heading {
+        font-size: 60px;
+        margin-top: -10px;
+    }
+
+    .main-content .intro-heading {
+        font-size: 30px;
+    }
+
+    .nav-list {
+        position: fixed;
         top: 0;
-        right: -900px;
-        width: 80%;
+        right: -100%;
+        width: 75%;
         height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
         padding-top: 80px;
         transition: all 0.3s ease;
     }
-    nav-list.active{
+
+    .nav-list.active {
         right: 0;
     }
-    .nav-list li:not(:last-child) {
-        text-align: left;
-        width: 100%;
-        padding: 10px 30px;
-        border-bottom: 1px solid var(--white);
 
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 90%;
     }
 
     #about-us .container {
         flex-direction: column;
+        text-align: center;
         gap: 30px;
     }
-    footer .container{
-        flex-direction: column;
-        gap: 16px;
-    }
 
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
