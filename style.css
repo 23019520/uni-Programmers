@@ -132,9 +132,7 @@ color: var(--white);
 .service img:hover {
     transform: scale(1.1);
 }
-.service button:hover {
-    transform: scale(1.1);
-}
+
 
 #testimonial{
     background: #f1f2fa;
@@ -159,12 +157,14 @@ color: var(--white);
     justify-content: center;
     align-items: center;
 }
+
 #testimonial .container img {
     width: 100px; /* Adjust width */
     height: 100px; /* Adjust height */
     border-radius: 50%; /* Keep it circular */
     object-fit: cover; /* Ensure it looks good */
 }
+
 
 
 
@@ -394,4 +394,3 @@ color: var(--white);
         margin-top: 20px; /* Space between text and image */
     }
 }
-
