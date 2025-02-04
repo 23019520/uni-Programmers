@@ -132,6 +132,9 @@ color: var(--white);
 .service img:hover {
     transform: scale(1.1);
 }
+.service button:hover {
+    transform: scale(1.1);
+}
 
 #testimonial{
     background: #f1f2fa;
@@ -156,12 +159,30 @@ color: var(--white);
     justify-content: center;
     align-items: center;
 }
+#testimonial .container img {
+    width: 100px; /* Adjust width */
+    height: 100px; /* Adjust height */
+    border-radius: 50%; /* Keep it circular */
+    object-fit: cover; /* Ensure it looks good */
+}
+
+
+
+
 #about-us .container {
     display: flex;
-    align-items: canter;
+    align-items: center;
     justify-content: space-between;
-    gap: 120px;
+    gap: 40px;
+    flex-wrap: wrap;
 }
+.about-image img {
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    border-radius: 10px;
+}
+
 #about-us .container .about-content {
     max-width: 500px;
     display: flex;
@@ -194,86 +215,183 @@ color: var(--white);
     font-size: 50px;
 
 }
-footer {
-    margin-top: -60px;
+#footer {
+    background-color: #f1f2fa;
+    color: #536942;
+    text-align: center;
+    padding: 20px 0;
 }
-footer .container{
-    display: flex;
-    padding: 40px 16px;
-    justify-content: space-between;
-}
-footer-links {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+
+.footer-links {
     list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
 
-}@media screen and (max-width: 768px) {
-    #main {
-        background-size: contain;
-        background-position: top center;
-        min-height: 50vh;
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #007bff; /* Blue color for links */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00c3ff; /* Lighter blue on hover */
+}
+
+.footer-logo {
+    width: 120px; /* Adjust logo size */
+    margin: 10px 0;
+}
+#meet-the-team {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9; /* Light background */
+}
+
+#meet-the-team h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 22%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    .team-member {
+        width: 45%;
     }
+}
 
-    .main-content {
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    .main-content .main-heading {
-        font-size: 60px;
-        margin-top: -10px;
-    }
-
-    .main-content .intro-heading {
-        font-size: 30px;
-    }
-
-    .nav-list {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.9);
-        flex-direction: column;
-        padding-top: 80px;
-        transition: all 0.3s ease;
-    }
-
-    .nav-list.active {
-        right: 0;
-    }
-
-    .menu-btn {
-        display: block;
-        cursor: pointer;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-        padding: 14px;
-    }
-
-    .services {
+@media screen and (max-width: 768px) {
+    .team-members {
         flex-direction: column;
         align-items: center;
     }
 
-    .service {
-        width: 90%;
+    .team-member {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 520px) {
+    /* Main Menu adjustments for tablet */
+    .nav-list {
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center; /* Center the menu items */
+    }
+    
+    .nav-list a {
+        padding: 10px 15px;
+        font-size: 16px;
     }
 
+    .menu-btn {
+        display: none; /* Hide the mobile menu icon on tablet */
+    }
+
+    /* Ensure the buttons in the main content stay aligned */
+    .main-content .intro-heading {
+        font-size: 40px; /* Scale down the intro heading */
+    }
+
+    .main-content .main-heading {
+        font-size: 90px; /* Scale down the main heading */
+    }
+
+    .main-content p {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust the Services section */
+    .services {
+        justify-content: space-around; /* Ensure services are evenly spaced */
+    }
+
+    .service {
+        width: 30%; /* Decrease width for tablet layout */
+    }
+
+    /* About Us section adjustments */
+    #about-us .container {
+        flex-direction: row;
+        gap: 40px;
+        justify-content: center; /* Center the content */
+    }
+
+    #about-us .container .about-content {
+        text-align: center; /* Ensure about text is centered */
+    }
+
+    /* Footer adjustments */
+    footer .container {
+        flex-direction: row;
+        justify-content: space-between; /* Ensure footer links and logo are aligned */
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    .about-image img {
+        max-width: 300px; /* Reduce max-width for tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
     #about-us .container {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
     }
 
-    footer .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
+    .about-image img {
+        max-width: 250px; /* Smaller image for mobile */
+        margin-top: 20px; /* Space between text and image */
     }
 }
+
