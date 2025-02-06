@@ -10,6 +10,8 @@
     --primary: #536942;
     --secondary: #ffd936;
     --white: #efefef;
+    --black: #000000;
+
 }
 
 body {
@@ -18,7 +20,6 @@ body {
 }
 
 #main {
-    background-image: url("/image/background1.jpeg");
     min-height: 70vh;
     background-position: bottom center;
     background-size: cover;
@@ -39,6 +40,7 @@ section {
     margin: 80px auto;
 }
 
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -53,7 +55,7 @@ nav {
 }
 
 .nav-list a {
-    color: var(--white);
+    color: var(--primary);
     font-weight: bold;
 }
 
@@ -67,7 +69,7 @@ nav {
 }
 
 .btn-secondary {
-    border: 1px solid var(--white);
+    border: 1px solid var(--black);
     color: var(--white);
 }
 
@@ -78,7 +80,7 @@ nav {
 }
 
 .btn-chatbot {
-    color: #f9f9f9;
+    color: #000000;
 }
 
 .main-content {
@@ -87,7 +89,7 @@ nav {
     align-items: center;
     justify-content: center;
     margin-top: 80px;
-    color: var(--white);
+    color: var(--primary);
     text-align: center;
 }
 
@@ -265,6 +267,75 @@ nav {
 .team-member p {
     font-size: 14px;
     color: #666;
+}
+
+.explore-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.explore-option {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore-option:hover {
+    background-color: #f0f0f0;
+}
+
+.module {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.module h3 {
+    margin-top: 0;
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+}
+
+.file-item {
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 4px solid #007BFF;
+    background-color: #fff;
+}
+
+.file-item h4 {
+    margin: 0;
+    color: #333;
+}
+
+.file-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.file-item a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.file-item a:hover {
+    text-decoration: underline;
+}
+
+.files-display {
+    margin-top: 40px;
+}
+
+.file-item h3 {
+    margin: 0;
 }
 
 footer {

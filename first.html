@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Explore Services - Uni Programmers Academy</title>
+</head>
+<body>
+    <div id="main">
+        <div class="container">
+            <nav>
+                <img src="/image/fir" alt="Uni Programmers Academy Logo" >
+                <ul class="nav-list">
+                    <li><a href="index.html#main">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#about-us">About</a></li>
+                    <li><a href="index.html#footer">Contact</a></li>
+                    <li>
+                        <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json">
+                            <button class="btn btn-chatbot">Chatbot</button>
+                        </a>
+                    </li>
+                </ul>
+                <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+            </nav>
+
+            <div class="main-content">
+                <h1 class="main-heading">FIND AND DOWNLOAD</h1>
+                <p>Books, Notes, Exams, and UNI.p Exclusive notes</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="explore-services">
+        <div class="container">
+            <div class="section-title">
+                <h1 style="text-align: center;">Explore Our Resources</h1>
+                <div class="line"></div>
+            </div>
+            <div class="explore-options">
+                <div class="explore-option" onclick="showFiles('books')">
+                    <h3>Books</h3>
+                    <p>Access a wide range of textbooks and reference materials.</p>
+                </div>
+                <div class="explore-option" onclick="showFiles('notes')">
+                    <h3>Notes</h3>
+                    <p>Find detailed notes and summaries for your courses.</p>
+                </div>
+                <div class="explore-option" onclick="showFiles('exams')">
+                    <h3>Exams</h3>
+                    <p>Practice with past exam papers and solutions.</p>
+                </div>
+                <div class="explore-option" onclick="showFiles('unip')">
+                    <h3>UNI.p</h3>
+                    <p>Explore resources specifically tailored for UNI.p students.</p>
+                </div>
+            </div>
+
+            <div id="files-display" class="files-display">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="footer-logo">
+            <ul class="footer-links">
+                <li><a href="index.html#main">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about-us">About</a></li>
+                <li><a href="index.html#footer">Contact</a></li>
+            </ul>
+            <p>UNI.p website by Dzivhani Unarine</p>
+            <p>All rights reserved &copy; 2025 Bright Developments</p>
+        </div>
+    </footer>
+
+    <script>
+        const navBtn = document.querySelector('.menu-btn');
+        const navList = document.querySelector('.nav-list');
+
+        navBtn.addEventListener("click", function () {
+            navList.classList.toggle('active');
+        });
+
+        function showFiles(category) {
+    const filesDisplay = document.getElementById('files-display');
+    let filesHTML = '';
+
+    if (category === 'books') {
+        filesHTML = `
+            <div class="module">
+    <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+    <div class="file-item">
+        <h4>Introduction to Java</h4>
+        <p>A beginner-friendly guide to Java programming.</p>
+        <a href="/files/books/com1321/java_intro.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Data Structures in Java</h4>
+        <p>Learn about data structures using Java.</p>
+        <a href="/files/books/com1321/data_structures_java.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Object-Oriented Concepts</h4>
+        <p>Explore OOP principles like inheritance, polymorphism, and encapsulation.</p>
+        <a href="/files/books/com1321/oop_concepts.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Exception Handling in Java</h4>
+        <p>Understand error handling mechanisms in Java.</p>
+        <a href="/files/books/com1321/exception_handling.pdf" download>Download</a>
+    </div>
+</div>
+
+<div class="module">
+    <h3>COM1122 - INTRODUCTION TO COMPUTER SYSTEMS</h3>
+    <div class="file-item">
+        <h4>The History of Computers</h4>
+        <p>Learn about the evolution of computers from early designs to modern technology.</p>
+        <a href="/files/books/com1122/history_of_computers.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Types of Network Topologies</h4>
+        <p>An overview of different network topologies and their applications.</p>
+        <a href="/files/books/com1122/network_topologies.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Operating Systems Basics</h4>
+        <p>Introduction to operating systems, processes, and file management.</p>
+        <a href="/files/books/com1122/os_basics.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Computer Hardware Components</h4>
+        <p>Understand the essential components of a computer system.</p>
+        <a href="/files/books/com1122/hardware_components.pdf" download>Download</a>
+    </div>
+</div>
+
+<div class="module">
+    <h3>COM1124 - FUNDAMENTALS OF COMPUTER ARCHITECTURE</h3>
+    <div class="file-item">
+        <h4>Introduction to Computer Architecture</h4>
+        <p>Understand the basics of computer architecture, including CPU, memory, and storage.</p>
+        <a href="/files/books/com1124/intro_computer_architecture.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Processor Design and Performance</h4>
+        <p>Explore the fundamentals of processor design, pipelines, and performance optimization.</p>
+        <a href="/files/books/com1124/processor_design.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Memory Hierarchy and Storage</h4>
+        <p>Learn about different types of memory, cache, and storage architectures.</p>
+        <a href="/files/books/com1124/memory_hierarchy.pdf" download>Download</a>
+    </div>
+    <div class="file-item">
+        <h4>Instruction Set Architecture</h4>
+        <p>Dive into the concepts of instruction sets and how processors execute code.</p>
+        <a href="/files/books/com1124/instruction_set.pdf" download>Download</a>
+    </div>
+</div>
+
+        `;
+    } else if (category === 'notes') {
+    filesHTML = `
+        <div class="module">
+            <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+                <h4>Java Lecture Notes</h4>
+                <p>Comprehensive notes on Java programming concepts.</p>
+                <a href="/files/notes/com1321/java_notes.pdf" download>Download</a>
+            </div>
+            <div class="file-item">
+                <h4>OOP Principles</h4>
+                <p>Detailed notes on encapsulation, inheritance, and polymorphism.</p>
+                <a href="/files/notes/com1321/oop_principles.pdf" download>Download</a>
+            </div>
+        </div>
+        <div class="module">
+            <h3>COM1122 - INTRODUCTION TO COMPUTER SYSTEMS</h3>
+            <div class="file-item">
+                <h4>History of Computers Notes</h4>
+                <p>Lecture notes covering the evolution of computers.</p>
+                <a href="/files/notes/com1122/history_of_computers.pdf" download>Download</a>
+            </div>
+            <div class="file-item">
+                <h4>Operating Systems Notes</h4>
+                <p>Detailed notes on operating system functions and structures.</p>
+                <a href="/files/notes/com1122/os_notes.pdf" download>Download</a>
+            </div>
+        </div>
+        <div class="module">
+            <h3>COM1124 - FUNDAMENTALS OF COMPUTER ARCHITECTURE</h3>
+            <div class="file-item">
+                <h4>Computer Architecture Notes</h4>
+                <p>Core notes covering CPU design and memory structures.</p>
+                <a href="/files/notes/com1124/architecture_notes.pdf" download>Download</a>
+            </div>
+        </div>
+    `;
+} else if (category === 'exams') {
+    filesHTML = `
+        <div class="module">
+            <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+                <h4>Final Exam 2023</h4>
+                <p>Past exam paper covering Java and OOP concepts.</p>
+                <a href="/files/exams/com1321/final_2023.pdf" download>Download</a>
+            </div>
+        </div>
+        <div class="module">
+            <h3>COM1122 - INTRODUCTION TO COMPUTER SYSTEMS</h3>
+            <div class="file-item">
+                <h4>Midterm Exam 2023</h4>
+                <p>Past paper covering history, networking, and operating systems.</p>
+                <a href="/files/exams/com1122/midterm_2023.pdf" download>Download</a>
+            </div>
+        </div>
+        <div class="module">
+            <h3>COM1124 - FUNDAMENTALS OF COMPUTER ARCHITECTURE</h3>
+            <div class="file-item">
+                <h4>Computer Architecture Exam</h4>
+                <p>Past exam covering instruction sets, CPU design, and memory hierarchy.</p>
+                <a href="/files/exams/com1124/architecture_exam.pdf" download>Download</a>
+            </div>
+        </div>
+    `;
+} else if (category === 'unip') {
+    filesHTML = `
+        <div class="module">
+            <h3>UNI.p Exclusive - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+                <h4>Advanced Java Topics</h4>
+                <p>Exclusive content covering advanced Java techniques.</p>
+                <a href="/files/unip/com1321/advanced_java.pdf" download>Download</a>
+            </div>
+            <div class="file-item">
+                <h4>Design Patterns in Java</h4>
+                <p>Learn essential software design patterns for Java applications.</p>
+                <a href="/files/unip/com1321/design_patterns.pdf" download>Download</a>
+            </div>
+        </div>
+        <div class="module">
+            <h3>UNI.p Exclusive - INTRODUCTION TO COMPUTER SYSTEMS</h3>
+            <div class="file-item">
+                <h4>Cybersecurity Essentials</h4>
+                <p>Exclusive notes on securing operating systems and networks.</p>
+                <a href="/files/unip/com1122/cybersecurity.pdf" download>Download</a>
+            </div>
+        </div>
+        <div class="module">
+            <h3>UNI.p Exclusive - FUNDAMENTALS OF COMPUTER ARCHITECTURE</h3>
+            <div class="file-item">
+                <h4>Advanced Computer Architecture</h4>
+                <p>Exclusive deep dive into advanced processor architectures.</p>
+                <a href="/files/unip/com1124/advanced_architecture.pdf" download>Download</a>
+            </div>
+        </div>
+    `;
+} else {
+    filesHTML = '<p>No files available for this category.</p>';
+}
+
+
+    filesDisplay.innerHTML = filesHTML;
+}
+
+    </script>
+</body>
+</html>
