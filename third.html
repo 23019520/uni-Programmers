@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Explore Services - Uni Programmers Academy</title>
+</head>
+<body>
+  <div id="main">
+    <div class="container">
+      <nav>
+        <img src="/image/fir" alt="Uni Programmers Academy Logo">
+        <ul class="nav-list">
+          <li><a href="index.html#main">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about-us">About</a></li>
+          <li><a href="index.html#footer">Contact</a></li>
+          <li>
+            <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json">
+              <button class="btn btn-chatbot">Chatbot</button>
+            </a>
+          </li>
+        </ul>
+        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+      </nav>
+
+      <div class="main-content">
+        <h1 class="main-heading">FIND AND DOWNLOAD</h1>
+        <h3>THIRD YEAR FIRST SEMESTER</h3>
+      </div>
+    </div>
+  </div>
+
+  <section id="explore-services">
+    <div class="container">
+      <div class="section-title">
+        <h1 style="text-align: center;">Explore Our Resources</h1>
+        <div class="line"></div>
+      </div>
+      <div class="explore-options">
+        <div class="explore-option" onclick="showFiles('books')">
+          <h3>Books</h3>
+          <p>Access a wide range of textbooks and reference materials.</p>
+        </div>
+        <div class="explore-option" onclick="showFiles('notes')">
+          <h3>Notes</h3>
+          <p>Find detailed notes and summaries for your courses.</p>
+        </div>
+        <div class="explore-option" onclick="showFiles('exams')">
+          <h3>Exams</h3>
+          <p>Practice with past exam papers and solutions.</p>
+        </div>
+        <div class="explore-option" onclick="showFiles('unip')">
+          <h3>UNI.p</h3>
+          <p>Explore resources specifically tailored for UNI.p students.</p>
+        </div>
+      </div>
+
+      <div id="files-display" class="files-display">
+        <!-- Dynamic content will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container">
+      <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="footer-logo">
+      <ul class="footer-links">
+        <li><a href="index.html#main">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about-us">About</a></li>
+        <li><a href="index.html#footer">Contact</a></li>
+      </ul>
+      <p>UNI.p website by Dzivhani Unarine</p>
+      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    </div>
+  </footer>
+
+  <script>
+    const navBtn = document.querySelector('.menu-btn');
+    const navList = document.querySelector('.nav-list');
+
+    navBtn.addEventListener("click", function () {
+      navList.classList.toggle('active');
+    });
+
+    function showFiles(category) {
+      const filesDisplay = document.getElementById('files-display');
+      let filesHTML = '';
+
+      if (category === 'books') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM3120 - SOFTWARE ENGINEERING 3120</h3>
+            <div class="file-item">
+              <h4>Software Engineering Textbook</h4>
+              <p>A comprehensive guide covering the software development lifecycle, design patterns, and best practices.</p>
+              <a href="/files/books/com3120/software_engineering_textbook.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM3121 - DISTRIBUTED OPERATING SYSTEMS 3121</h3>
+            <div class="file-item">
+              <h4>Distributed Operating Systems Textbook</h4>
+              <p>An in-depth textbook exploring the architecture, challenges, and techniques used in distributed systems.</p>
+              <a href="/files/books/com3121/distributed_operating_systems_textbook.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM3128 - SYSTEMS ANALYSIS AND DESIGN 3128</h3>
+            <div class="file-item">
+              <h4>Systems Analysis and Design Guide</h4>
+              <p>A detailed resource covering methodologies, tools, and techniques for effective systems analysis and design.</p>
+              <a href="/files/books/com3128/systems_analysis_design_guide.pdf" download>Download</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'notes') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM3120 - SOFTWARE ENGINEERING 3120</h3>
+            <div class="file-item">
+              <h4>Software Engineering Lecture Notes</h4>
+              <p>In-depth lecture notes covering project management, design, testing methodologies, and development processes.</p>
+              <a href="/files/notes/com3120/software_engineering_notes.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM3121 - DISTRIBUTED OPERATING SYSTEMS 3121</h3>
+            <div class="file-item">
+              <h4>Distributed OS Lecture Notes</h4>
+              <p>Detailed notes on distributed architectures, synchronization techniques, and communication protocols.</p>
+              <a href="/files/notes/com3121/distributed_os_notes.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM3128 - SYSTEMS ANALYSIS AND DESIGN 3128</h3>
+            <div class="file-item">
+              <h4>Systems Analysis & Design Notes</h4>
+              <p>Comprehensive notes on requirements analysis, design methodologies, and system development life cycles.</p>
+              <a href="/files/notes/com3128/systems_analysis_design_notes.pdf" download>Download</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'exams') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM3120 - SOFTWARE ENGINEERING 3120</h3>
+            <div class="file-item">
+              <h4>Software Engineering Final Exam</h4>
+              <p>Past exam paper covering topics from software development processes to design patterns.</p>
+              <a href="/files/exams/com3120/software_engineering_final_exam.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM3121 - DISTRIBUTED OPERATING SYSTEMS 3121</h3>
+            <div class="file-item">
+              <h4>Distributed OS Exam</h4>
+              <p>Past exam paper focusing on distributed system concepts, fault tolerance, and network communication.</p>
+              <a href="/files/exams/com3121/distributed_os_exam.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM3128 - SYSTEMS ANALYSIS AND DESIGN 3128</h3>
+            <div class="file-item">
+              <h4>Systems Analysis & Design Exam</h4>
+              <p>Past exam paper covering methodologies, design techniques, and requirements analysis.</p>
+              <a href="/files/exams/com3128/systems_analysis_design_exam.pdf" download>Download</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'unip') {
+        filesHTML = `
+          <div class="module">
+            <h3>UNI.p Exclusive - SOFTWARE ENGINEERING 3120</h3>
+            <div class="file-item">
+              <h4>Advanced Software Engineering Concepts</h4>
+              <p>Exclusive content diving deep into agile methodologies, DevOps practices, and advanced design patterns.</p>
+              <a href="/files/unip/com3120/advanced_software_engineering.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>UNI.p Exclusive - DISTRIBUTED OPERATING SYSTEMS 3121</h3>
+            <div class="file-item">
+              <h4>Advanced Distributed Systems</h4>
+              <p>Exclusive guide to advanced topics in distributed computing, fault tolerance, and system scalability.</p>
+              <a href="/files/unip/com3121/advanced_distributed_os.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>UNI.p Exclusive - SYSTEMS ANALYSIS AND DESIGN 3128</h3>
+            <div class="file-item">
+              <h4>Advanced Systems Analysis and Design</h4>
+              <p>Exclusive insights into modern system design strategies, UML, and advanced requirements engineering.</p>
+              <a href="/files/unip/com3128/advanced_systems_analysis_design.pdf" download>Download</a>
+            </div>
+          </div>
+        `;
+      } else {
+        filesHTML = '<p>No files available for this category.</p>';
+      }
+
+      filesDisplay.innerHTML = filesHTML;
+    }
+  </script>
+</body>
+</html>

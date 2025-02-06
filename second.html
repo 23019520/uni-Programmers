@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Explore Services - Uni Programmers Academy</title>
+</head>
+<body>
+  <!-- Main Header Section -->
+  <div id="main">
+    <div class="container">
+      <nav>
+        <!-- Logo (ensure the src points to your actual logo file) -->
+        <img src="/image/fir" alt="Uni Programmers Academy Logo" />
+        <ul class="nav-list">
+          <li><a href="index.html#main">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about-us">About</a></li>
+          <li><a href="index.html#footer">Contact</a></li>
+          <li>
+            <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-chatbot">Chatbot</button>
+            </a>
+          </li>
+        </ul>
+        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+      </nav>
+
+      <div class="main-content">
+        <h1 class="main-heading">FIND AND DOWNLOAD</h1>
+        <h3>SECOND YEAR FIRST SEMESTER</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explore Services Section -->
+  <section id="explore-services">
+    <div class="container">
+      <div class="section-title">
+        <h1 style="text-align: center;">Explore Our Resources</h1>
+        <div class="line"></div>
+      </div>
+      <div class="explore-options">
+        <div class="explore-option" onclick="showFiles('books')">
+          <h3>Books</h3>
+          <p>Access a wide range of textbooks and reference materials.</p>
+        </div>
+        <div class="explore-option" onclick="showFiles('notes')">
+          <h3>Notes</h3>
+          <p>Find detailed notes and summaries for your courses.</p>
+        </div>
+        <div class="explore-option" onclick="showFiles('exams')">
+          <h3>Exams</h3>
+          <p>Practice with past exam papers and solutions.</p>
+        </div>
+        <div class="explore-option" onclick="showFiles('unip')">
+          <h3>UNI.p</h3>
+          <p>Explore resources specifically tailored for UNI.p students.</p>
+        </div>
+      </div>
+
+      <!-- Dynamic Files Display -->
+      <div id="files-display" class="files-display">
+        <!-- Dynamic content will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container">
+      <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="footer-logo" />
+      <ul class="footer-links">
+        <li><a href="index.html#main">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about-us">About</a></li>
+        <li><a href="index.html#footer">Contact</a></li>
+      </ul>
+      <p>UNI.p website by Dzivhani Unarine</p>
+      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle navigation for mobile view
+    const navBtn = document.querySelector('.menu-btn');
+    const navList = document.querySelector('.nav-list');
+
+    navBtn.addEventListener("click", () => {
+      navList.classList.toggle('active');
+    });
+
+    // Function to dynamically load files based on category
+    function showFiles(category) {
+      const filesDisplay = document.getElementById('files-display');
+      let filesHTML = '';
+
+      if (category === 'books') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM2301 - COMPUTER SCIENCE LABORATORY 2301</h3>
+            <div class="file-item">
+              <h4>Lab Manual</h4>
+              <p>Comprehensive lab manual covering experiments and safety procedures.</p>
+              <a href="/files/books/com2301/lab_manual.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2120 - DIGITAL DESIGN TECHNIQUES 2120</h3>
+            <div class="file-item">
+              <h4>Digital Design Textbook</h4>
+              <p>A complete guide to digital design principles and techniques.</p>
+              <a href="/files/books/com2120/digital_design_textbook.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2123 - IMPERATIVE PROGRAMMING 2123</h3>
+            <div class="file-item">
+              <h4>Imperative Programming Concepts</h4>
+              <p>A detailed textbook on imperative programming constructs and algorithms.</p>
+              <a href="/files/books/com2123/imperative_programming_concepts.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2125 - OPERATING SYSTEMS 2125</h3>
+            <div class="file-item">
+              <h4>Operating Systems Fundamentals</h4>
+              <p>An in-depth look at operating system design, processes, and memory management.</p>
+              <a href="/files/books/com2125/operating_systems_fundamentals.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2126 - HUMAN COMPUTER INTERACTION 2126</h3>
+            <div class="file-item">
+              <h4>Human-Computer Interaction Guide</h4>
+              <p>Comprehensive guide on HCI principles, usability, and design strategies.</p>
+              <a href="/files/books/com2126/hci_guide.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2128 - ARTIFICIAL INTELLIGENCE FUNDAMENTALS 2128</h3>
+            <div class="file-item">
+              <h4>Artificial Intelligence Fundamentals</h4>
+              <p>A textbook covering the basics of AI, including machine learning and neural networks.</p>
+              <a href="/files/books/com2128/ai_fundamentals.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2129 - DATABASE FUNDAMENTALS 2129</h3>
+            <div class="file-item">
+              <h4>Database Systems Textbook</h4>
+              <p>A complete textbook on database design, SQL, and data management principles.</p>
+              <a href="/files/books/com2129/database_systems_textbook.pdf" download>Download</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'notes') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM2301 - COMPUTER SCIENCE LABORATORY 2301</h3>
+            <div class="file-item">
+              <h4>Lab Experiment Notes</h4>
+              <p>Detailed notes covering lab experiments and methodologies.</p>
+              <a href="/files/notes/com2301/lab_experiments.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2120 - DIGITAL DESIGN TECHNIQUES 2120</h3>
+            <div class="file-item">
+              <h4>Digital Design Lecture Notes</h4>
+              <p>Comprehensive notes on digital design principles and techniques.</p>
+              <a href="/files/notes/com2120/digital_design_notes.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2123 - IMPERATIVE PROGRAMMING 2123</h3>
+            <div class="file-item">
+              <h4>Imperative Programming Notes</h4>
+              <p>Notes on programming constructs, control flow, and algorithms.</p>
+              <a href="/files/notes/com2123/imperative_programming_notes.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2125 - OPERATING SYSTEMS 2125</h3>
+            <div class="file-item">
+              <h4>Operating Systems Lecture Notes</h4>
+              <p>Detailed notes on operating system concepts, processes, and memory management.</p>
+              <a href="/files/notes/com2125/operating_systems_notes.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2126 - HUMAN COMPUTER INTERACTION 2126</h3>
+            <div class="file-item">
+              <h4>HCI Lecture Notes</h4>
+              <p>Insights and notes on user interface design and user experience fundamentals.</p>
+              <a href="/files/notes/com2126/hci_notes.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2128 - ARTIFICIAL INTELLIGENCE FUNDAMENTALS 2128</h3>
+            <div class="file-item">
+              <h4>AI Fundamentals Notes</h4>
+              <p>Comprehensive notes on AI concepts, machine learning, and neural networks.</p>
+              <a href="/files/notes/com2128/ai_fundamentals_notes.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2129 - DATABASE FUNDAMENTALS 2129</h3>
+            <div class="file-item">
+              <h4>Database Systems Notes</h4>
+              <p>Notes covering database design, SQL, and data management principles.</p>
+              <a href="/files/notes/com2129/database_notes.pdf" download>Download</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'exams') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM2301 - COMPUTER SCIENCE LABORATORY 2301</h3>
+            <div class="file-item">
+              <h4>Lab Final Exam 2023</h4>
+              <p>Past lab exam paper with solutions.</p>
+              <a href="/files/exams/com2301/lab_final_2023.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2120 - DIGITAL DESIGN TECHNIQUES 2120</h3>
+            <div class="file-item">
+              <h4>Digital Design Exam 2023</h4>
+              <p>Past exam covering digital design principles and techniques.</p>
+              <a href="/files/exams/com2120/digital_design_exam_2023.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2123 - IMPERATIVE PROGRAMMING 2123</h3>
+            <div class="file-item">
+              <h4>Imperative Programming Final Exam</h4>
+              <p>Past exam paper testing key concepts in imperative programming.</p>
+              <a href="/files/exams/com2123/imperative_programming_exam.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2125 - OPERATING SYSTEMS 2125</h3>
+            <div class="file-item">
+              <h4>Operating Systems Midterm</h4>
+              <p>Past midterm exam covering core OS concepts and memory management.</p>
+              <a href="/files/exams/com2125/operating_systems_midterm.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2126 - HUMAN COMPUTER INTERACTION 2126</h3>
+            <div class="file-item">
+              <h4>HCI Final Exam</h4>
+              <p>Past exam paper on user interface design and human-computer interaction.</p>
+              <a href="/files/exams/com2126/hci_exam.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2128 - ARTIFICIAL INTELLIGENCE FUNDAMENTALS 2128</h3>
+            <div class="file-item">
+              <h4>AI Fundamentals Exam</h4>
+              <p>Past exam covering machine learning, neural networks, and AI algorithms.</p>
+              <a href="/files/exams/com2128/ai_exam.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>COM2129 - DATABASE FUNDAMENTALS 2129</h3>
+            <div class="file-item">
+              <h4>Database Exam 2023</h4>
+              <p>Past exam paper on database design, SQL queries, and data management.</p>
+              <a href="/files/exams/com2129/database_exam_2023.pdf" download>Download</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'unip') {
+        filesHTML = `
+          <div class="module">
+            <h3>UNI.p Exclusive - COMPUTER SCIENCE LABORATORY 2301</h3>
+            <div class="file-item">
+              <h4>Advanced Lab Techniques</h4>
+              <p>Exclusive guide to advanced lab methodologies and experiment designs.</p>
+              <a href="/files/unip/com2301/advanced_lab_techniques.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>UNI.p Exclusive - DIGITAL DESIGN TECHNIQUES 2120</h3>
+            <div class="file-item">
+              <h4>Advanced Digital Design</h4>
+              <p>Exclusive content on cutting-edge digital design methods and circuit optimizations.</p>
+              <a href="/files/unip/com2120/advanced_digital_design.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>UNI.p Exclusive - IMPERATIVE PROGRAMMING 2123</h3>
+            <div class="file-item">
+              <h4>Modern Imperative Programming</h4>
+              <p>Exclusive insights into modern approaches and best practices in imperative programming.</p>
+              <a href="/files/unip/com2123/modern_imperative_programming.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>UNI.p Exclusive - OPERATING SYSTEMS 2125</h3>
+            <div class="file-item">
+              <h4>OS Internals Deep Dive</h4>
+              <p>Exclusive content exploring the internal workings of operating systems and kernel design.</p>
+              <a href="/files/unip/com2125/os_internals.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>UNI.p Exclusive - HUMAN COMPUTER INTERACTION 2126</h3>
+            <div class="file-item">
+              <h4>Next-Gen HCI Design</h4>
+              <p>Exclusive guide to emerging trends and innovative designs in human-computer interaction.</p>
+              <a href="/files/unip/com2126/nextgen_hci.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>UNI.p Exclusive - ARTIFICIAL INTELLIGENCE FUNDAMENTALS 2128</h3>
+            <div class="file-item">
+              <h4>Advanced AI Techniques</h4>
+              <p>Exclusive content on advanced algorithms, deep learning, and AI strategies.</p>
+              <a href="/files/unip/com2128/advanced_ai.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="module">
+            <h3>UNI.p Exclusive - DATABASE FUNDAMENTALS 2129</h3>
+            <div class="file-item">
+              <h4>Next-Generation Database Systems</h4>
+              <p>Exclusive insights into modern database architectures and innovative SQL practices.</p>
+              <a href="/files/unip/com2129/nextgen_database.pdf" download>Download</a>
+            </div>
+          </div>
+        `;
+      } else {
+        filesHTML = '<p>No files available for this category.</p>';
+      }
+
+      filesDisplay.innerHTML = filesHTML;
+    }
+  </script>
+</body>
+</html>

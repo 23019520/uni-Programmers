@@ -1,168 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Uni Programmers Academy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Uni Programmers Academy</title>
 </head>
 <body>
-    <div id="main">
-        <div class="container">
-            <nav>
-                <img src="/image/" alt="Uni Programmers Academy Logo" class="logo" >
+  <!-- Main Section -->
+  <div id="main">
+    <div class="container">
+        <div id="menu1">
+      <nav>
+        <!-- Update the image source with your logo filename -->
+        <img src="/image/log.png" alt="Uni Programmers Academy Logo" class="logo">
+        <ul class="nav-list">
+          <li><a href="#main">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about-us">About</a></li>
+          <li><a href="#footer">Contact</a></li>
+          <li>
+            <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-chatbo">Chatbot</button>
+            </a>
+          </li>
+        </ul>
+        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+      </nav>
 
-                <ul class="nav-list">
-                    <li><a href="#main">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about-us">About</a></li>
-                    <li><a href="#footer">Contact</a></li>
-                    <li>
-                        <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json">
-                            <button class="btn btn-chatbot">Chatbot</button>
-                        </a>
-                    </li>
-                </ul>
-                <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
-            </nav>
-
-            <div class="main-content">
-                <h1 class="intro-heading">BRIGHT DEV'S</h1>
-                <h1 class="main-heading">UniP Academy</h1>
-                <p>The one-stop ComSci website</p>
-                
-            </div>
-        </div>
+      <div class="main-content">
+        <h1 class="intro-heading">BRIGHT DEV'S</h1>
+        <h1 class="main-heading">UniP Academy</h1>
+        <p>The one-stop ComSci website</p>
+      </div>
     </div>
+  </div>
 
-    <section id="services">
-        <div class="container">
-            <div class="section-title">
-                <h1 style="text-align: center;">Our Services</h1>
-                <div class="line"></div>
-            </div>
-            <div class="services">
-                <div class="service">
-                    <img src="image/first.jpg" alt="First Year Level">
-                    <h3>First Year Level</h3>
-                    <p>Explore our courses for first-year students</p>
-                    <a href="first.html"><button class="btn btn-primary" >Explore</button>
-                </div></a>
-                <div class="service">
-                    <img src="image/second.jpg" alt="Second Year Level">
-                    <h3>Second Year Level</h3>
-                    <p>Explore our courses for second-year students</p>
-                    <button class="btn btn-primary">Explore</button>
-                </div>
-                <div class="service">
-                    <img src="image/third.jpg" alt="Third Year Level">
-                    <h3>Third Year Level</h3>
-                    <p>Explore our courses for third-year students</p>
-                    <button class="btn btn-primary">Explore</button>
-                </div>
-            </div>
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h1 style="text-align: center;">Our Services</h1>
+        <div class="line"></div>
+      </div>
+      <div class="services">
+        <!-- First Year Service -->
+        <div class="service">
+          <img src="image/first.jpg" alt="First Year Level">
+          <h3>First Year Level</h3>
+          <p>Explore our courses for first-year students</p>
+          <a href="first.html">
+            <button class="btn btn-primary">Explore</button>
+          </a>
         </div>
-    </section>
-
-    <section id="testimonial">
-        <div class="container">
-            <img src="/image/isac.jpg" alt="Isaac Newton">
-            <h1>To every action there is always opposed an equal reaction.</h1>
-            <div class="profile">
-                <h2>~Isaac Newton</h2>
-            </div>
+        <!-- Second Year Service -->
+        <div class="service">
+          <img src="image/second.jpg" alt="Second Year Level">
+          <h3>Second Year Level</h3>
+          <p>Explore our courses for second-year students</p>
+          <a href="second.html">
+            <button class="btn btn-primary">Explore</button>
+          </a>
         </div>
-    </section>
-
-    <section id="about-us">
-        <div class="container">
-            <div class="about-content">
-                <h4>ABOUT US</h4>
-                <h1>We are the biggest tutoring company in the university, offering tutorials for all computer science modules. We are best known for our commitment to always go a step further in assisting our students.</h1>
-                <p>The UniP Academy was created by Vhutshilo Maeba, who became the first member of the academy and achieved an amazing 100%.</p>
-                <button class="btn btn-primary">More About Us</button>
-            </div>
-            <div class="about-image">
-                <img src="/image/code.webp" alt="Code">
-            </div>
+        <!-- Third Year Service -->
+        <div class="service">
+          <img src="image/third.jpg" alt="Third Year Level">
+          <h3>Third Year Level</h3>
+          <p>Explore our courses for third-year students</p>
+          <a href="third.html">
+            <button class="btn btn-primary">Explore</button>
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="questions">
-        <div class="container">
-            <h1>Talk to Our AI Assistant</h1>
-            <p>Bright is our online chatbot that will assist you with all Java or tutorial-related questions.</p>
-            <button class="btn btn-primary" onclick="openChatbot()">Say Hi!</button>
+  <!-- Testimonial Section -->
+  <section id="testimonial">
+    <div class="container">
+      <img src="/image/michael.jpg" alt="Isaac Newton">
+      <h1>Always believe in yourself. No matter who's around you being negative or thrusting negative energy at you, totally block it off. Because whatever you believe, you become.</h1>
+      <div class="profile">
+        <h2>~Michael Jackson</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about-us">
+    <div class="container">
+      <div class="about-content">
+        <h4>ABOUT US</h4>
+        <h1>
+          We are the biggest tutoring company in the university, offering tutorials for all computer science modules.
+          We are best known for our commitment to always go a step further in assisting our students.
+        </h1>
+        <p>
+          The UniP Academy was created by Vhutshilo Maeba, who became the first member of the academy and achieved an amazing 100%.
+        </p>
+        <a href="more_about_us.html">
+          <button class="btn btn-primary">More About Us</button>
+        </a>
+      </div>
+      <div class="about-image">
+        <img src="/image/code.webp" alt="Code">
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions / Chatbot Section -->
+  <section id="questions">
+    <div class="container">
+      <h1>Talk to Our AI Assistant</h1>
+      <p>Bright is our online chatbot that will assist you with all Java or tutorial-related questions.</p>
+      <button class="btn btn-primary" onclick="openChatbot()">Say Hi!</button>
+    </div>
+  </section>
+
+  <!-- Meet the Team Section -->
+  <section id="meet-the-team">
+    <div class="container">
+      <h2>Meet the Team</h2>
+      <div class="team-members">
+        <div class="team-member">
+          <img src="/image/VHUTSHILO.jpeg" alt="Maeba Vhutshilo">
+          <h3>Maeba Vhutshilo</h3>
+          <p>Founder and CEO of UniP Academy</p>
+          <p>WhatsApp: <a href="https://wa.me/+27720308649" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: 0720308649</p>
         </div>
-    </section>
-
-    <section id="meet-the-team">
-        <div class="container">
-            <h2>Meet the Team</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="/image/VHUTSHILO.jpeg" alt="Maeba Vhutshilo">
-                    <h3>Maeba Vhutshilo</h3>
-                    <p>Founder and CEO of UniP Academy</p>
-                    <p>WhatsApp: <a href="https://wa.me/+27720308649" target="_blank">Message on WhatsApp</a></p>
-                    <p>Call: 0720308649</p>
-                </div>
-                <div class="team-member">
-                    <img src="/image/UNA.jpeg" alt="Dzivhani Unarine">
-                    <h3>Dzivhani Unarine</h3>
-                    <p>Tutor, Web Developer, and Manager</p>
-                    <p>WhatsApp: <a href="https://wa.me/+27798616203" target="_blank">Message on WhatsApp</a></p>
-                    <p>Call: Not available</p>
-                </div>
-                <div class="team-member">
-                    <img src="/image/tshikota.jpeg" alt="Tshikota Tshifhiwa">
-                    <h3>Tshikota Tshifhiwa</h3>
-                    <p>Senior Tutor</p>
-                    <p>WhatsApp: <a href="https://wa.me/0609037061" target="_blank">Message on WhatsApp</a></p>
-                    <p>Call: 0609037061</p>
-                </div>
-                <div class="team-member">
-                    <img src="/image/ORI.jpeg" alt="Nemukula Orifuna">
-                    <h3>Nemukula Orifuna</h3>
-                    <p>Tutor</p>
-                    <p>WhatsApp: <a href="https://wa.me/+27768872018" target="_blank">Message on WhatsApp</a></p>
-                    <p>Call: 0768872018</p>
-                </div>
-                <div class="team-member">
-                    <img src="/image/IPFI.jpeg" alt="Ipfilawe">
-                    <h3>Ipfilawe</h3>
-                    <p>Manager</p>
-                    <p>WhatsApp: <a href="https://wa.me/+27729064307" target="_blank">Message on WhatsApp</a></p>
-                    <p>Call: 0729064307</p>
-                </div>
-            </div>
+        <div class="team-member">
+          <img src="/image/UNA.jpeg" alt="Dzivhani Unarine">
+          <h3>Dzivhani Unarine</h3>
+          <p>Tutor, Web Developer, and Manager</p>
+          <p>WhatsApp: <a href="https://wa.me/+27798616203" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: Not available</p>
         </div>
-    </section>
-
-    <footer id="footer">
-        <div class="container">
-            <ul class="footer-links">
-                <li><a href="#main">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about-us">About</a></li>
-                <li><a href="#footer">Contact</a></li>
-            </ul>
-            <p>UNI.p website by Dzivhani Unarine</p>
-            <p>All rights reserved &copy; 2025 Bright Developments</p>
+        <div class="team-member">
+          <img src="/image/tshikota.jpeg" alt="Tshikota Tshifhiwa">
+          <h3>Tshikota Tshifhiwa</h3>
+          <p>Senior Tutor</p>
+          <p>WhatsApp: <a href="https://wa.me/0609037061" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: 0609037061</p>
         </div>
-    </footer>
+        <div class="team-member">
+          <img src="/image/ORI.jpeg" alt="Nemukula Orifuna">
+          <h3>Nemukula Orifuna</h3>
+          <p>Tutor</p>
+          <p>WhatsApp: <a href="https://wa.me/+27768872018" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: 0768872018</p>
+        </div>
+        <div class="team-member">
+          <img src="/image/IPFI.jpeg" alt="Ipfilawe">
+          <h3>Ipfilawe</h3>
+          <p>Manager</p>
+          <p>WhatsApp: <a href="https://wa.me/+27729064307" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: 0729064307</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        const navBtn = document.querySelector('.menu-btn');
-        const navList = document.querySelector('.nav-list');
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="#main">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about-us">About</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+      <p>UNI.p website by Dzivhani Unarine</p>
+      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    </div>
+  </footer>
 
-        navBtn.addEventListener("click", function () {
-            navList.classList.toggle('active');
-        });
+  <!-- JavaScript -->
+  <script>
+    // Toggle navigation for mobile view
+    document.querySelector('.menu-btn').addEventListener('click', function () {
+      document.querySelector('.nav-list').classList.toggle('active');
+    });
 
-        function openChatbot() {
-            window.open("https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json", "_blank");
-        }
-    </script>
+    // Open chatbot in a new tab/window
+    function openChatbot() {
+      window.open(
+        "https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json",
+        "_blank"
+      );
+    }
+  </script>
 </body>
 </html>
+
