@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&display=swap'); 
 
 /* -----------------------------------------
    Reset & Global Styles
@@ -28,14 +28,14 @@ a {
 }
 
 .main{
-        background-color: #efefef;
-        width: 100%; /* Make the container full width */
-        height: 100vh; /* Make the container fill the full height of the viewport */
-        padding: 16px;
-        margin: 0 auto;
-        box-sizing: border-box; /* Ensure padding is included in the width and height calculation */
-      
+  background-color: #efefef;
+  width: 100%; /* Make the container full width */
+  height: 100vh; /* Make the container fill the full height of the viewport */
+  padding: 16px;
+  margin: 0 auto;
+  box-sizing: border-box; /* Ensure padding is included in the width and height calculation */
 }
+
 .container {
   max-width: 1200px;
   padding: 16px;
@@ -57,12 +57,20 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+  flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .nav-list {
-  display: flex;
-  list-style: none;
+  display: flex; /* Align <li> items horizontally */
   gap: 28px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-list li {
+  display: flex;
+  align-items: center; /* Vertically align the menu items */
 }
 
 .nav-list a {
@@ -71,12 +79,7 @@ nav {
 }
 
 .menu-btn {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: var(--white);
-  cursor: pointer;
+  display: none; /* Hide menu button completely */
 }
 
 /* -----------------------------------------
@@ -207,7 +210,6 @@ nav {
   object-fit: cover;
 }
 
-
 /* -----------------------------------------
    About Us Section
 ----------------------------------------- */
@@ -308,6 +310,10 @@ nav {
   color: #666;
 }
 
+.team-member p a {
+  color: #007BFF;
+}
+
 /* -----------------------------------------
    Explore Options & Modules (for dynamic content)
 ----------------------------------------- */
@@ -402,8 +408,6 @@ footer {
   margin-bottom: 10px;
 }
 
-
-
 .footer-links a {
   color: var(--primary);
   font-weight: bold;
@@ -414,99 +418,97 @@ footer {
   margin: 10px 0;
 }
 
-explore-option img {
-  width: 100%; /* Make images responsive */
-  height: 250px; /* Set a fixed height for all images */
-  object-fit: cover; /* This will crop the image if necessary to fit the size */
-  border-radius: 10px 10px 0 0;
-  margin-bottom: 10px;
-}
 /* -----------------------------------------
-   Responsive Styles
+   Small Screen Optimization
 ----------------------------------------- */
-.explore-option img {
-  width: 100%; /* Make images responsive */
-  height: 200px; /* Fixed height to keep it consistent */
-  object-fit: cover; /* This will crop the image if necessary to fit the size */
-  border-radius: 10px 10px 0 0;
-  margin-bottom: 10px;
-}
-
-
-@media screen and (max-width: 768px) { 
-  .menu-btn {
-    display: block;
-  }
-
-  /* Adjust Navigation */
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: var(--primary);
-    padding: 20px;
-    border-radius: 5px;
-    width: 200px;
-    text-align: center;
-  }
-
-  .nav-list.active {
-    display: flex;
-  }
-
-  /* Reduce Heading Sizes */
+@media (max-width: 768px) {
   .main-content .intro-heading {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .main-content .main-heading {
     font-size: 60px;
   }
 
-  /* Make Services & Team Members Full Width */
-  .service, .team-member, .explore-option {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  /* Adjust about us and content alignment */
-  .about-content, .about-image {
-    text-align: center;
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  /* Adjust Images */
-  .about-image img, .team-member img {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  /* Improve Footer Layout */
-  .footer-links {
+  .services {
     flex-direction: column;
     gap: 10px;
-    align-items: center;
   }
 
-  /* Adjust container for testimonial */
-  #testimonial .container {
-    max-width: 100%;
-    padding: 0 20px;
+  .service {
+    width: 100%;
   }
 
-  /* Responsive Design for Explore Section */
+  .team-member {
+    width: 45%;
+  }
+
+  .team-member img {
+    width: 80px;
+    height: 80px;
+  }
+
   .explore-options {
-    grid-template-columns: 1fr; /* Stack the options vertically on smaller screens */
+    flex-direction: column;
   }
 
-  .explore-option img {
-    height: 150px; /* Reduce height on smaller devices */
-    width: 100%; /* Make images responsive */
+  .explore-option {
+    width: 100%;
+    padding: 15px;
   }
 
+  .module {
+    width: 100%;
+  }
+
+  nav {
+    padding: 10px; /* Adjust padding for small screens */
+  }
+
+  .nav-list {
+    gap: 16px; /* Reduce gap for small screens */
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Center the items horizontally */
+  }
+
+  .nav-list li {
+    display: inline-block; /* Keep them in a row */
+  }
+
+  .nav-list a {
+    padding: 10px 15px; /* Add padding to make links clickable */
+    font-size: 14px; /* Adjust font size for small screens */
+  }
+
+  .footer-logo {
+    width: 80px;
+  }
+
+  
 }
 
+@media (max-width: 480px) {
+  .main-content .intro-heading {
+    font-size: 24px;
+  }
 
+  .main-content .main-heading {
+    font-size: 45px;
+  }
+
+  .team-member {
+    width: 100%;
+  }
+
+  .nav-list a {
+    font-size: 10px;
+  }
+  .team-member img {
+    width: 100px; /* Set a fixed width */
+    height: 100px; /* Set a fixed height to make the image circular */
+    object-fit: cover; /* Ensure the image covers the area without stretching */
+    border-radius: 50%; /* Make the image round */
+    margin-bottom: 15px;
+  }
+}
