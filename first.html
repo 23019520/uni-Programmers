@@ -106,17 +106,9 @@
         <!-- Exams Option -->
         <div class="explore-option">
           <img src="image/exams.jpg" alt="Exams">
-          <h3>Exams</h3>
+          <h3>practice</h3>
           <p>Practice with past exam papers and solutions.</p>
-          <button class="btn btn-primary" onclick="showFiles(this, 'exams')">Explore</button>
-          <div class="files-display"></div>
-        </div>
-        <!-- UNI.p Option -->
-        <div class="explore-option">
-          <img src="image/UNI.p.jpg" alt="UNI.p">
-          <h3>UNI.p</h3>
-          <p>Explore resources specifically tailored for UNI.p students.</p>
-          <button class="btn btn-primary" onclick="showFiles(this, 'unip')">Explore</button>
+          <button class="btn btn-primary" onclick="showFiles(this, 'practice')">Explore</button>
           <div class="files-display"></div>
         </div>
       </div>
@@ -169,9 +161,9 @@
             <div class="file-item">
               <h4>Sams Teach Yourself Java in 24 Hours 6th Edition Oct 2011</h4>
               <p>his book teaches Java programming from the ground up. It introduces the
-concepts in English instead of jargon with step-by-step examples of working programs you will create. Spend 24 hours with this book and you’ll be
-writing your own Java programs, confident in your ability to use the language and learn more about it. You also will have skills that are becoming
-increasingly important—such as network computing, graphical user interface design, and object-oriented programming.</p>
+                  concepts in English instead of jargon with step-by-step examples of working programs you will create. Spend 24 hours with this book and you’ll be
+                  writing your own Java programs, confident in your ability to use the language and learn more about it. You also will have skills that are becoming
+                  increasingly important—such as network computing, graphical user interface design, and object-oriented programming.</p>
               <a href="/files/books/Sams.Teach.Yourself.Java.in.24.Hours.6th.Edition.Oct.2011.pdf" target="_blank" rel="noopener noreferrer">Open</a>
             </div>
           </div>
@@ -181,31 +173,29 @@ increasingly important—such as network computing, graphical user interface des
           <div class="module">
             <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
             <div class="file-item">
-              <h4>Java Lecture Notes</h4>
-              <p>Comprehensive notes on Java programming concepts.</p>
-              <a href="/files/notes/com1321/java_notes.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+              <h4>Java introduction notes</h4>
+              <p>Object Orientated Programming  
+                A language is said to be object orientated when it aims to implement real-world entities like inheritance, 
+                encapsulation, polymorphism etc.</p>
+              <a href="/files/notes/First notes COM1321.pdf" target="_blank" rel="noopener noreferrer">Open</a>
             </div>
+            <div class="file-item">
+              <h4>INTRODUCTION TO JAVA</h4>
+              <p>BY: MAEBA VHUTSHILO IN ASSOCIATION WITH UNI.PROGRAMMERS
+                ACADEMY</p>
+              <a href="/files/notes/Intro to java By Maeba Vhutshiloo.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+            
           </div>
         `;
-      } else if (category === 'exams') {
+      } else if (category === 'practice') {
         filesHTML = `
           <div class="module">
             <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
             <div class="file-item">
               <h4>Final Exam 2023</h4>
               <p>Past exam paper covering Java and OOP concepts.</p>
-              <a href="/files/exams/com1321/final_2023.pdf" target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
-          </div>
-        `;
-      } else if (category === 'unip') {
-        filesHTML = `
-          <div class="module">
-            <h3>UNI.p Exclusive - OBJECT ORIENTED PROGRAMMING</h3>
-            <div class="file-item">
-              <h4>Advanced Java Topics</h4>
-              <p>Exclusive content covering advanced Java techniques.</p>
-              <a href="/files/unip/com1321/advanced_java.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+              <a href="/files/practice/Practice questions COM 1321.pdf" target="_blank" rel="noopener noreferrer">Open</a>
             </div>
           </div>
         `;

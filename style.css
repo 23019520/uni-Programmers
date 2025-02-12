@@ -503,7 +503,7 @@ explore-option img {
   }
 
   .explore-option img {
-    max-height: 150px; /* Reduce height on smaller devices */
+    height: 150px; /* Reduce height on smaller devices */
     width: 100%; /* Make images responsive */
   }
 
