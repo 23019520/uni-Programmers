@@ -3,8 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to your external stylesheet if you prefer -->
   <link rel="stylesheet" href="style.css" />
   <title>Explore Services - Uni Programmers Academy</title>
+  <!-- Additional CSS for layout, separate cells, and dynamic content -->
+  <style>
+    /* Grid layout for Explore Options */
+    .explore-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    /* Styling each cell (option) */
+    .explore-option {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      position: relative;
+    }
+
+    .explore-option:hover {
+      background-color: #f0f0f0;
+    }
+
+    .explore-option img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 10px;
+    }
+
+    .explore-option button {
+      margin-top: 10px;
+    }
+
+    /* Dynamic content container inside each cell – hidden by default */
+    .files-display {
+      display: none;
+      text-align: left;
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
   <!-- Main Header Section -->
@@ -18,11 +65,6 @@
           <li><a href="index.html#services">Services</a></li>
           <li><a href="index.html#about-us">About</a></li>
           <li><a href="index.html#footer">Contact</a></li>
-          <li>
-            <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json" target="_blank" rel="noopener noreferrer">
-              <button class="btn btn-chatbot">Chatbot</button>
-            </a>
-          </li>
         </ul>
         <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
       </nav>
@@ -42,29 +84,41 @@
         <div class="line"></div>
       </div>
 
-      <!-- Explore Options -->
+      <!-- Explore Options as Separate Cells -->
       <div class="explore-options">
-        <div class="explore-option" onclick="showFiles('books')">
+        <!-- Books Option -->
+        <div class="explore-option">
+          <img src="image/books.jpg" alt="Books">
           <h3>Books</h3>
           <p>Access a wide range of textbooks and reference materials.</p>
+          <button class="btn btn-primary" onclick="showFiles(this, 'books')">Explore</button>
+          <!-- Container for dynamic content within this cell -->
+          <div class="files-display"></div>
         </div>
-        <div class="explore-option" onclick="showFiles('notes')">
+        <!-- Notes Option -->
+        <div class="explore-option">
+          <img src="image/notes.jpg" alt="Notes">
           <h3>Notes</h3>
           <p>Find detailed notes and summaries for your courses.</p>
+          <button class="btn btn-primary" onclick="showFiles(this, 'notes')">Explore</button>
+          <div class="files-display"></div>
         </div>
-        <div class="explore-option" onclick="showFiles('exams')">
+        <!-- Exams Option -->
+        <div class="explore-option">
+          <img src="image/exams.jpg" alt="Exams">
           <h3>Exams</h3>
           <p>Practice with past exam papers and solutions.</p>
+          <button class="btn btn-primary" onclick="showFiles(this, 'exams')">Explore</button>
+          <div class="files-display"></div>
         </div>
-        <div class="explore-option" onclick="showFiles('unip')">
+        <!-- UNI.p Option -->
+        <div class="explore-option">
+          <img src="image/UNI.p.jpg" alt="UNI.p">
           <h3>UNI.p</h3>
           <p>Explore resources specifically tailored for UNI.p students.</p>
+          <button class="btn btn-primary" onclick="showFiles(this, 'unip')">Explore</button>
+          <div class="files-display"></div>
         </div>
-      </div>
-
-      <!-- Dynamic Files Display -->
-      <div id="files-display" class="files-display">
-        <!-- Dynamic content will be loaded here -->
       </div>
     </div>
   </section>
@@ -86,7 +140,7 @@
 
   <!-- JavaScript -->
   <script>
-    // Toggle the navigation menu for mobile view
+    // Toggle navigation for mobile view
     const navBtn = document.querySelector('.menu-btn');
     const navList = document.querySelector('.nav-list');
 
@@ -94,9 +148,18 @@
       navList.classList.toggle('active');
     });
 
-    // Function to dynamically load files based on selected category
-    function showFiles(category) {
-      const filesDisplay = document.getElementById('files-display');
+    // Function to load dynamic content under each cell
+    function showFiles(btn, category) {
+      const cell = btn.parentNode;
+      const display = cell.querySelector('.files-display');
+
+      // Toggle display: if visible, hide it; otherwise, load content.
+      if (display.style.display === "block") {
+        display.style.display = "none";
+        display.innerHTML = "";
+        return;
+      }
+
       let filesHTML = '';
 
       if (category === 'books') {
@@ -104,70 +167,12 @@
           <div class="module">
             <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
             <div class="file-item">
-              <h4>Introduction to Java</h4>
-              <p>A beginner-friendly guide to Java programming.</p>
-              <a href="/files/books/com1321/java_intro.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Data Structures in Java</h4>
-              <p>Learn about data structures using Java.</p>
-              <a href="/files/books/com1321/data_structures_java.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Object-Oriented Concepts</h4>
-              <p>Explore OOP principles like inheritance, polymorphism, and encapsulation.</p>
-              <a href="/files/books/com1321/oop_concepts.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Exception Handling in Java</h4>
-              <p>Understand error handling mechanisms in Java.</p>
-              <a href="/files/books/com1321/exception_handling.pdf" download>Download</a>
-            </div>
-          </div>
-          <div class="module">
-            <h3>COM1122 - INTRODUCTION TO COMPUTER SYSTEMS</h3>
-            <div class="file-item">
-              <h4>The History of Computers</h4>
-              <p>Learn about the evolution of computers from early designs to modern technology.</p>
-              <a href="/files/books/com1122/history_of_computers.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Types of Network Topologies</h4>
-              <p>An overview of different network topologies and their applications.</p>
-              <a href="/files/books/com1122/network_topologies.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Operating Systems Basics</h4>
-              <p>Introduction to operating systems, processes, and file management.</p>
-              <a href="/files/books/com1122/os_basics.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Computer Hardware Components</h4>
-              <p>Understand the essential components of a computer system.</p>
-              <a href="/files/books/com1122/hardware_components.pdf" download>Download</a>
-            </div>
-          </div>
-          <div class="module">
-            <h3>COM1124 - FUNDAMENTALS OF COMPUTER ARCHITECTURE</h3>
-            <div class="file-item">
-              <h4>Introduction to Computer Architecture</h4>
-              <p>Understand the basics of computer architecture, including CPU, memory, and storage.</p>
-              <a href="/files/books/com1124/intro_computer_architecture.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Processor Design and Performance</h4>
-              <p>Explore the fundamentals of processor design, pipelines, and performance optimization.</p>
-              <a href="/files/books/com1124/processor_design.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Memory Hierarchy and Storage</h4>
-              <p>Learn about different types of memory, cache, and storage architectures.</p>
-              <a href="/files/books/com1124/memory_hierarchy.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Instruction Set Architecture</h4>
-              <p>Dive into the concepts of instruction sets and how processors execute code.</p>
-              <a href="/files/books/com1124/instruction_set.pdf" download>Download</a>
+              <h4>Sams Teach Yourself Java in 24 Hours 6th Edition Oct 2011</h4>
+              <p>his book teaches Java programming from the ground up. It introduces the
+concepts in English instead of jargon with step-by-step examples of working programs you will create. Spend 24 hours with this book and you’ll be
+writing your own Java programs, confident in your ability to use the language and learn more about it. You also will have skills that are becoming
+increasingly important—such as network computing, graphical user interface design, and object-oriented programming.</p>
+              <a href="/files/books/Sams.Teach.Yourself.Java.in.24.Hours.6th.Edition.Oct.2011.pdf" target="_blank" rel="noopener noreferrer">Open</a>
             </div>
           </div>
         `;
@@ -178,33 +183,7 @@
             <div class="file-item">
               <h4>Java Lecture Notes</h4>
               <p>Comprehensive notes on Java programming concepts.</p>
-              <a href="/files/notes/com1321/java_notes.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>OOP Principles</h4>
-              <p>Detailed notes on encapsulation, inheritance, and polymorphism.</p>
-              <a href="/files/notes/com1321/oop_principles.pdf" download>Download</a>
-            </div>
-          </div>
-          <div class="module">
-            <h3>COM1122 - INTRODUCTION TO COMPUTER SYSTEMS</h3>
-            <div class="file-item">
-              <h4>History of Computers Notes</h4>
-              <p>Lecture notes covering the evolution of computers.</p>
-              <a href="/files/notes/com1122/history_of_computers.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Operating Systems Notes</h4>
-              <p>Detailed notes on operating system functions and structures.</p>
-              <a href="/files/notes/com1122/os_notes.pdf" download>Download</a>
-            </div>
-          </div>
-          <div class="module">
-            <h3>COM1124 - FUNDAMENTALS OF COMPUTER ARCHITECTURE</h3>
-            <div class="file-item">
-              <h4>Computer Architecture Notes</h4>
-              <p>Core notes covering CPU design and memory structures.</p>
-              <a href="/files/notes/com1124/architecture_notes.pdf" download>Download</a>
+              <a href="/files/notes/com1321/java_notes.pdf" target="_blank" rel="noopener noreferrer">Open</a>
             </div>
           </div>
         `;
@@ -215,23 +194,7 @@
             <div class="file-item">
               <h4>Final Exam 2023</h4>
               <p>Past exam paper covering Java and OOP concepts.</p>
-              <a href="/files/exams/com1321/final_2023.pdf" download>Download</a>
-            </div>
-          </div>
-          <div class="module">
-            <h3>COM1122 - INTRODUCTION TO COMPUTER SYSTEMS</h3>
-            <div class="file-item">
-              <h4>Midterm Exam 2023</h4>
-              <p>Past paper covering history, networking, and operating systems.</p>
-              <a href="/files/exams/com1122/midterm_2023.pdf" download>Download</a>
-            </div>
-          </div>
-          <div class="module">
-            <h3>COM1124 - FUNDAMENTALS OF COMPUTER ARCHITECTURE</h3>
-            <div class="file-item">
-              <h4>Computer Architecture Exam</h4>
-              <p>Past exam covering instruction sets, CPU design, and memory hierarchy.</p>
-              <a href="/files/exams/com1124/architecture_exam.pdf" download>Download</a>
+              <a href="/files/exams/com1321/final_2023.pdf" target="_blank" rel="noopener noreferrer">Open</a>
             </div>
           </div>
         `;
@@ -242,28 +205,7 @@
             <div class="file-item">
               <h4>Advanced Java Topics</h4>
               <p>Exclusive content covering advanced Java techniques.</p>
-              <a href="/files/unip/com1321/advanced_java.pdf" download>Download</a>
-            </div>
-            <div class="file-item">
-              <h4>Design Patterns in Java</h4>
-              <p>Learn essential software design patterns for Java applications.</p>
-              <a href="/files/unip/com1321/design_patterns.pdf" download>Download</a>
-            </div>
-          </div>
-          <div class="module">
-            <h3>UNI.p Exclusive - INTRODUCTION TO COMPUTER SYSTEMS</h3>
-            <div class="file-item">
-              <h4>Cybersecurity Essentials</h4>
-              <p>Exclusive notes on securing operating systems and networks.</p>
-              <a href="/files/unip/com1122/cybersecurity.pdf" download>Download</a>
-            </div>
-          </div>
-          <div class="module">
-            <h3>UNI.p Exclusive - FUNDAMENTALS OF COMPUTER ARCHITECTURE</h3>
-            <div class="file-item">
-              <h4>Advanced Computer Architecture</h4>
-              <p>Exclusive deep dive into advanced processor architectures.</p>
-              <a href="/files/unip/com1124/advanced_architecture.pdf" download>Download</a>
+              <a href="/files/unip/com1321/advanced_java.pdf" target="_blank" rel="noopener noreferrer">Open</a>
             </div>
           </div>
         `;
@@ -271,7 +213,8 @@
         filesHTML = '<p>No files available for this category.</p>';
       }
 
-      filesDisplay.innerHTML = filesHTML;
+      display.innerHTML = filesHTML;
+      display.style.display = "block";
     }
   </script>
 </body>

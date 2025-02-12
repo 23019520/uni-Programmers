@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to your external stylesheet if you prefer -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Explore Services - Uni Programmers Academy</title>
+  <!-- Additional CSS for layout, separate cells, and dynamic content -->
+  <style>
+    /* Grid layout for Explore Options */
+    .explore-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    /* Styling each cell (option) */
+    .explore-option {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      position: relative;
+    }
+
+    .explore-option:hover {
+      background-color: #f0f0f0;
+    }
+
+    .explore-option img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 10px;
+    }
+
+    .explore-option button {
+      margin-top: 10px;
+    }
+
+    /* Dynamic content container inside each cell – hidden by default */
+    .files-display {
+      display: none;
+      text-align: left;
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Header Section -->
+  <div id="main">
+    <div class="container">
+      <nav>
+        <!-- Logo (update src with the correct file name) -->
+        <img src="/image/fir" alt="Uni Programmers Academy Logo" />
+        <ul class="nav-list">
+          <li><a href="index.html#main">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about-us">About</a></li>
+          <li><a href="index.html#footer">Contact</a></li>
+        </ul>
+        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+      </nav>
+
+      <div class="main-content">
+        <h1 class="main-heading">FIND AND DOWNLOAD</h1>
+        <h3>FIRST YEAR FIRST SEMESTER</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explore Services Section -->
+  <section id="explore-services">
+    <div class="container">
+      <div class="section-title">
+        <h1 style="text-align: center;">Explore Our Resources</h1>
+        <div class="line"></div>
+      </div>
+
+      <!-- Explore Options as Separate Cells -->
+      <div class="explore-options">
+        <!-- Books Option -->
+        <div class="explore-option">
+          <img src="image/books.jpg" alt="Books">
+          <h3>Books</h3>
+          <p>Access a wide range of textbooks and reference materials.</p>
+          <button class="btn btn-primary" onclick="showFiles(this, 'books')">Explore</button>
+          <!-- Container for dynamic content within this cell -->
+          <div class="files-display"></div>
+        </div>
+        <!-- Notes Option -->
+        <div class="explore-option">
+          <img src="image/notes.jpg" alt="Notes">
+          <h3>Notes</h3>
+          <p>Find detailed notes and summaries for your courses.</p>
+          <button class="btn btn-primary" onclick="showFiles(this, 'notes')">Explore</button>
+          <div class="files-display"></div>
+        </div>
+        <!-- Exams Option -->
+        <div class="explore-option">
+          <img src="image/exams.jpg" alt="Exams">
+          <h3>Exams</h3>
+          <p>Practice with past exam papers and solutions.</p>
+          <button class="btn btn-primary" onclick="showFiles(this, 'exams')">Explore</button>
+          <div class="files-display"></div>
+        </div>
+        <!-- UNI.p Option -->
+        <div class="explore-option">
+          <img src="image/unip.jpg" alt="UNI.p">
+          <h3>UNI.p</h3>
+          <p>Explore resources specifically tailored for UNI.p students.</p>
+          <button class="btn btn-primary" onclick="showFiles(this, 'unip')">Explore</button>
+          <div class="files-display"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container">
+      <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="footer-logo" />
+      <ul class="footer-links">
+        <li><a href="index.html#main">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about-us">About</a></li>
+        <li><a href="index.html#footer">Contact</a></li>
+      </ul>
+      <p>UNI.p website by Dzivhani Unarine</p>
+      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle navigation for mobile view
+    const navBtn = document.querySelector('.menu-btn');
+    const navList = document.querySelector('.nav-list');
+
+    navBtn.addEventListener("click", () => {
+      navList.classList.toggle('active');
+    });
+
+    // Function to load dynamic content under each cell
+    function showFiles(btn, category) {
+      const cell = btn.parentNode;
+      const display = cell.querySelector('.files-display');
+
+      // Toggle display: if visible, hide it; otherwise, load content.
+      if (display.style.display === "block") {
+        display.style.display = "none";
+        display.innerHTML = "";
+        return;
+      }
+
+      let filesHTML = '';
+
+      if (category === 'books') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+              <h4>Introduction to Java</h4>
+              <p>A beginner-friendly guide to Java programming.</p>
+              <a href="/files/books/com1321/java_intro.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'notes') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+              <h4>Java Lecture Notes</h4>
+              <p>Comprehensive notes on Java programming concepts.</p>
+              <a href="/files/notes/com1321/java_notes.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'exams') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+              <h4>Final Exam 2023</h4>
+              <p>Past exam paper covering Java and OOP concepts.</p>
+              <a href="/files/exams/com1321/final_2023.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'unip') {
+        filesHTML = `
+          <div class="module">
+            <h3>UNI.p Exclusive - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+              <h4>Advanced Java Topics</h4>
+              <p>Exclusive content covering advanced Java techniques.</p>
+              <a href="/files/unip/com1321/advanced_java.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </div>
+        `;
+      } else {
+        filesHTML = '<p>No files available for this category.</p>';
+      }
+
+      display.innerHTML = filesHTML;
+      display.style.display = "block";
+    }
+  </script>
+</body>
+</html>
