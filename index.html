@@ -1,514 +1,189 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&display=swap'); 
-
-/* -----------------------------------------
-   Reset & Global Styles
------------------------------------------ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary: #536942;
-  --secondary: #ffd936;
-  --white: #efefef;
-  --black: #000000;
-}
-
-body {
-  font-family: "DM Sans", sans-serif;
-  color: var(--primary);
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.main{
-  background-color: #efefef;
-  width: 100%; /* Make the container full width */
-  height: 100vh; /* Make the container fill the full height of the viewport */
-  padding: 16px;
-  margin: 0 auto;
-  box-sizing: border-box; /* Ensure padding is included in the width and height calculation */
-}
-
-.container {
-  max-width: 1200px;
-  padding: 16px;
-  margin: 0 auto;
-}
-
-/* -----------------------------------------
-   Sections & Layout
------------------------------------------ */
-section {
-  margin: 80px auto;
-}
-
-/* -----------------------------------------
-   Navigation
------------------------------------------ */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-.nav-list {
-  display: flex; /* Align <li> items horizontally */
-  gap: 28px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.nav-list li {
-  display: flex;
-  align-items: center; /* Vertically align the menu items */
-}
-
-.nav-list a {
-  color: var(--primary);
-  font-weight: bold;
-}
-
-.menu-btn {
-  display: none; /* Hide menu button completely */
-}
-
-/* -----------------------------------------
-   Buttons
------------------------------------------ */
-.btn {
-  padding: 12px 20px;
-  background: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.btn-primary {
-  background: var(--secondary);
-  color: var(--primary);
-}
-
-.btn-secondary {
-  border: 1px solid var(--black);
-  color: var(--white);
-}
-
-.btn-chatbot {
-  color: var(--black);
-}
-
-/* -----------------------------------------
-   Main Section
------------------------------------------ */
-#main {
-  min-height: 70vh;
-  background-position: bottom center;
-  background-size: cover;
-}
-
-.logo {
-  width: 150px;
-  height: auto;
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 80px;
-  text-align: center;
-  color: var(--primary);
-}
-
-.main-content .intro-heading {
-  font-size: 50px;
-}
-
-.main-content .main-heading {
-  font-size: 110px;
-  margin-top: -20px;
-}
-
-.main-content p {
-  max-width: 250px;
-  margin-bottom: 10px;
-}
-
-/* -----------------------------------------
-   Services Section
------------------------------------------ */
-.services {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.service {
-  width: 300px;
-  text-align: center;
-}
-
-.service img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-  transition: transform 0.3s;
-}
-
-.service img:hover {
-  transform: scale(1.1);
-}
-
-/* -----------------------------------------
-   Testimonial Section
------------------------------------------ */
-#testimonial {
-  background: #f1f2fa;
-  padding: 50px 0;
-}
-
-#testimonial .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 600px;
-  gap: 30px;
-  text-align: center;
-}
-
-#testimonial h1 {
-  font-size: 50px;
-  font-family: 'Forum', sans-serif;
-}
-
-#testimonial .profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#testimonial img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* -----------------------------------------
-   About Us Section
------------------------------------------ */
-#about-us .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.about-image img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.about-content {
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.about-content h1 {
-  font-family: "Forum", sans-serif;
-  font-size: 30px;
-}
-
-/* -----------------------------------------
-   Questions / Chatbot Section
------------------------------------------ */
-#questions {
-  min-height: 500px;
-  background-position: bottom center;
-  background-size: cover;
-}
-
-#questions .container {
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  height: 500px;
-  text-align: center;
-}
-
-#questions h1 {
-  font-size: 50px;
-}
-
-/* -----------------------------------------
-   Meet the Team Section
------------------------------------------ */
-#meet-the-team {
-  text-align: center;
-  padding: 50px 0;
-  background-color: #f9f9f9;
-}
-
-#meet-the-team h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-.team-members {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.team-member {
-  width: 22%;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.team-member img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.team-member h3 {
-  font-size: 18px;
-  margin: 10px 0 5px;
-}
-
-.team-member p {
-  font-size: 14px;
-  color: #666;
-}
-
-.team-member p a {
-  color: #007BFF;
-}
-
-/* -----------------------------------------
-   Explore Options & Modules (for dynamic content)
------------------------------------------ */
-.explore-options {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
-.explore-option {
-  text-align: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.explore-option:hover {
-  background-color: #f0f0f0;
-}
-
-.module {
-  margin-bottom: 30px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-}
-
-.module h3 {
-  margin-top: 0;
-  color: #007BFF;
-  border-bottom: 2px solid #007BFF;
-  padding-bottom: 10px;
-}
-
-.file-item {
-  margin: 15px 0;
-  padding: 10px;
-  border-left: 4px solid #007BFF;
-  background-color: #fff;
-}
-
-.file-item h4 {
-  margin: 0;
-  color: #333;
-}
-
-.file-item p {
-  margin: 5px 0;
-  color: #666;
-}
-
-.file-item a {
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.file-item a:hover {
-  text-decoration: underline;
-}
-
-.files-display {
-  margin-top: 40px;
-}
-
-/* -----------------------------------------
-   Footer
------------------------------------------ */
-footer {
-  background-color: #f1f2fa;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 10px;
-}
-
-.explore-option img {
-  width: 100%; /* Set width to 100% to make it responsive */
-  height: 200px; /* Fixed height to keep it consistent */
-  object-fit: cover; /* This will crop the image if necessary to fit the size */
-  border-radius: 10px 10px 0 0;
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: var(--primary);
-  font-weight: bold;
-}
-
-.footer-logo {
-  width: 120px;
-  margin: 10px 0;
-}
-
-/* -----------------------------------------
-   Small Screen Optimization
------------------------------------------ */
-@media (max-width: 768px) {
-  .main-content .intro-heading {
-    font-size: 30px;
-  }
-
-  .main-content .main-heading {
-    font-size: 60px;
-  }
-
-  .services {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .service {
-    width: 100%;
-  }
-
-  .team-member {
-    width: 45%;
-  }
-
-  .team-member img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .explore-options {
-    flex-direction: column;
-  }
-
-  .explore-option {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .module {
-    width: 100%;
-  }
-
-  nav {
-    padding: 10px; /* Adjust padding for small screens */
-  }
-
-  .nav-list {
-    gap: 16px; /* Reduce gap for small screens */
-    margin: 0;
-    padding: 0;
-    justify-content: center; /* Center the items horizontally */
-  }
-
-  .nav-list li {
-    display: inline-block; /* Keep them in a row */
-  }
-
-  .nav-list a {
-    padding: 10px 15px; /* Add padding to make links clickable */
-    font-size: 14px; /* Adjust font size for small screens */
-  }
-
-  .footer-logo {
-    width: 80px;
-  }
-
-  
-}
-
-@media (max-width: 480px) {
-  .main-content .intro-heading {
-    font-size: 24px;
-  }
-
-  .main-content .main-heading {
-    font-size: 45px;
-  }
-
-  .team-member {
-    width: 100%;
-  }
-
-  .nav-list a {
-    font-size: 10px;
-  }
-  .team-member img {
-    width: 100px; /* Set a fixed width */
-    height: 100px; /* Set a fixed height to make the image circular */
-    object-fit: cover; /* Ensure the image covers the area without stretching */
-    border-radius: 50%; /* Make the image round */
-    margin-bottom: 15px;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Uni Programmers Academy</title>
+</head>
+<body>
+  <!-- Main Section -->
+  <div id="main">
+    <div class="container">
+        <div id="menu1">
+      <nav>
+        <!-- Update the image source with your logo filename -->
+        <ul class="nav-list">
+          <li><a href="#main">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about-us">About</a></li>
+          <a href="#meet-the-team">Contact</a></li>
+        </ul>
+        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+      </nav>
+
+      <div class="main-content">
+        <h1 class="intro-heading">BRIGHT DEV'S</h3>
+        <h1 class="main-heading">UniP Academy</h5>
+        <p>The one-stop ComSci website</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h1 style="text-align: center;">Our Services</h1>
+        <div class="line"></div>
+      </div>
+      <div class="services">
+        <!-- First Year Service -->
+        <div class="service">
+          <img src="image/first.jpg" alt="First Year Level">
+          <h3>First Year Level</h3>
+          <p>Explore our courses for first-year students</p>
+          <a href="/login.html">
+            <button class="btn btn-primary">Explore</button>
+          </a>
+        </div>
+        
+        <!-- Second Year Service -->
+        <div class="service">
+          <img src="image/second.jpg" alt="Second Year Level">
+          <h3>Second Year Level</h3>
+          <p>Explore our courses for second-year students</p>
+          <a href="second.html">
+            <button class="btn btn-primary">Explore</button>
+          </a>
+        </div>
+        <!-- Third Year Service -->
+        <div class="service">
+          <img src="image/third.jpg" alt="Third Year Level">
+          <h3>Third Year Level</h3>
+          <p>Explore our courses for third-year students</p>
+          <a href="third.html">
+            <button class="btn btn-primary">Explore</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section id="testimonial">
+    <div class="container">
+      <img src="/image/eleanor.jpg" alt="Isaac Newton">
+      <h3>Great minds discuss ideas; average minds discuss events; small minds discuss people...</h3>
+      <div class="profile">
+        <h3>~Eleanor Roosevelt</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about-us">
+    <div class="container">
+      <div class="about-content">
+        <h4>ABOUT US</h4>
+        <h1>
+          We are the biggest tutoring company in the university, offering tutorials for all computer science modules.
+          We are best known for our commitment to always go a step further in assisting our students.
+        </h1>
+        <p>
+          The UniP Academy was created by Vhutshilo Maeba, who became the first member of the academy and achieved an amazing 100%.
+        </p>
+        <a href="more_about_us.html">
+          <button class="btn btn-primary">More About Us</button>
+        </a>
+      </div>
+      <div class="about-image">
+        <img src="/image/code.webp" alt="Code">
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions / Chatbot Section -->
+  <section id="questions">
+    <div class="container">
+      <h1>Talk to Our AI Assistant</h1>
+      <p>Bright is our online chatbot that will assist you with all Java or tutorial-related questions.</p>
+      <button class="btn btn-primary" onclick="openChatbot()">Say Hi!</button>
+    </div>
+  </section>
+
+  <!-- Meet the Team Section -->
+  <section id="meet-the-team">
+    <div class="container">
+      <h2>Meet the Team</h2>
+      <div class="team-members">
+        <div class="team-member">
+          <img src="/image/vhutshilo.jpg" alt="Maeba Vhutshilo">
+          <h3>Maeba Vhutshilo</h3>
+          <p>Founder and CEO of UniP Academy</p>
+          <p>WhatsApp: <a href="https://wa.me/+27720308649" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: 0720308649</p>
+        </div>
+        <div class="team-member">
+          <img src="/image/una.jpg" alt="Dzivhani Unarine">
+          <h3>Dzivhani Unarine</h3>
+          <p>Tutor, Web Developer, and web Manager</p>
+          <p>WhatsApp: <a href="https://wa.me/+27798616203" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: Not available</p>
+        </div>
+        <div class="team-member">
+          <img src="/image/tshikot.jpeg" alt="Tshikota Tshifhiwa">
+          <h3>Tshikota Tshifhiwa</h3>
+          <p>Senior Tutor</p>
+          <p>WhatsApp: <a href="https://wa.me/0609037061" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: 0609037061</p>
+        </div>
+        <div class="team-member">
+          <img src="/image/ori.jpg" alt="Nemukula Orifuna">
+          <h3>Nemukula Orifuna</h3>
+          <p>Tutor</p>
+          <p>WhatsApp: <a href="https://wa.me/+27768872018" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: 0768872018</p>
+        </div>
+        <div class="team-member">
+          <img src="/image/ipfi.jpg" alt="Ipfilawe">
+          <h3>Ipfilawe</h3>
+          <p>Manager</p>
+          <p>WhatsApp: <a href="https://wa.me/+27729064307" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></p>
+          <p>Call: 0729064307</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="#main">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about-us">About</a></li>
+        <li><a href="#meet-the-team">Contact</a></li>
+      </ul>
+      <p>UNI.p website by Dzivhani Unarine</p>
+      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle navigation for mobile view
+    document.querySelector('.menu-btn').addEventListener('click', function () {
+      document.querySelector('.nav-list').classList.toggle('active');
+    });
+
+    // Open chatbot in a new tab/window
+    function openChatbot() {
+      window.open(
+        "https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/05/12/20250205125444-9DK7JOOH.json",
+        "_blank"
+      );
+    }
+  </script>
+</body>
+</html>
