@@ -394,13 +394,6 @@ footer {
   margin-bottom: 10px;
 }
 
-.explore-options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
 .explore-option img {
   width: 100%; /* Set width to 100% to make it responsive */
   height: 200px; /* Fixed height to keep it consistent */
@@ -420,10 +413,27 @@ footer {
   width: 120px;
   margin: 10px 0;
 }
+
+explore-option img {
+  width: 100%; /* Make images responsive */
+  height: 250px; /* Set a fixed height for all images */
+  object-fit: cover; /* This will crop the image if necessary to fit the size */
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
 /* -----------------------------------------
    Responsive Styles
 ----------------------------------------- */
-@media screen and (max-width: 768px) {
+.explore-option img {
+  width: 100%; /* Make images responsive */
+  height: 200px; /* Fixed height to keep it consistent */
+  object-fit: cover; /* This will crop the image if necessary to fit the size */
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 768px) { 
   .menu-btn {
     display: block;
   }
@@ -493,8 +503,10 @@ footer {
   }
 
   .explore-option img {
-    height: 150px; /* Reduce height on smaller devices */
+    max-height: 150px; /* Reduce height on smaller devices */
     width: 100%; /* Make images responsive */
   }
+
 }
+
 
