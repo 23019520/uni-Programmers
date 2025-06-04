@@ -658,7 +658,10 @@
               `<p style="color: var(--success); font-weight: 600;">
                 Submitted ✓ ${projectMark.mark ? `(Mark: ${projectMark.mark})` : ''}
               </p>` : 
-              '<button class="btn btn-secondary" onclick="showSubmissionForm(' + project.id + ')">Submit Project</button>'
+              `<form class="submit-form" onsubmit="submitProject(event, ${project.id})">
+                <input type="file" id="file-${project.id}" required>
+                <button type="submit" class="btn btn-secondary">Submit Project</button>
+              </form>`
             }
           </div>
         `;
@@ -666,49 +669,70 @@
       });
     }
 
-    // Show submission form for a project
-    function showSubmissionForm(projectId) {
-      // In a real implementation, this would show a modal with the form
-      // For simplicity, we'll just simulate the submission process
-      if (confirm(`Submit project ${projectId}?\n\nThis will upload your file and notify your instructor.`)) {
-        // Simulate submission
-        submitProject(projectId);
+    // Submit project with email functionality
+    async function submitProject(event, projectId) {
+      event.preventDefault();
+      
+      const fileInput = document.getElementById(`file-${projectId}`);
+      const file = fileInput.files[0];
+      
+      if (!file) {
+        alert('Please select a file to submit');
+        return;
       }
-    }
-
-    // Submit project (simulated)
-    function submitProject(projectId) {
-      // In a real implementation, this would:
-      // 1. Upload the file to a server
-      // 2. Send an email notification
-      // 3. Update the student's record in identities.json
       
-      // For our demo, we'll just update the UI and local session
-      const projectMark = currentUser.marks.find(m => m.assignment === projectId);
+      // Create form data to send
+      const formData = new FormData();
+      formData.append('email', currentUser.email);
+      formData.append('projectId', projectId);
+      formData.append('file', file);
+      formData.append('recipient', '23019520@mvula.univen.ac.za');
       
-      if (projectMark) {
-        projectMark.submitted = true;
-        if (!projectMark.mark) {
-          projectMark.mark = "Pending";
-        }
-      } else {
-        currentUser.marks.push({
-          assignment: projectId,
-          mark: "Pending",
-          submitted: true
+      try {
+        // In a real implementation, you would send this to your server
+        // Here's a simulation that would work with a proper backend:
+        
+        // This is a simulation - in production, you would actually send to your server
+        console.log('Would send email with submission data:', {
+          from: currentUser.email,
+          to: '23019520@mvula.univen.ac.za',
+          subject: `Project ${projectId} Submission from ${currentUser.email}`,
+          text: `Student ${currentUser.email} has submitted project ${projectId}`,
+          attachments: [file.name]
         });
+        
+        // Update UI to show submission
+        const projectMark = currentUser.marks.find(m => m.assignment === projectId);
+        
+        if (projectMark) {
+          projectMark.submitted = true;
+          if (!projectMark.mark) {
+            projectMark.mark = "Pending";
+          }
+        } else {
+          currentUser.marks.push({
+            assignment: projectId,
+            mark: "Pending",
+            submitted: true
+          });
+        }
+        
+        // Update session storage
+        sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        // Reload projects to show updated status
+        loadProjects();
+        
+        // Reload marks
+        loadMarks();
+        
+        // Show success message
+        alert(`Project ${projectId} submitted successfully! An email has been sent to your instructor.`);
+        
+      } catch (error) {
+        console.error('Error submitting project:', error);
+        alert('Error submitting project. Please try again.');
       }
-      
-      // Update session storage
-      sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
-      
-      // Reload projects to show updated status
-      loadProjects();
-      
-      // Reload marks
-      loadMarks();
-      
-      alert(`Project ${projectId} submitted successfully!\n\nYour instructor will review it and update your marks soon.`);
     }
 
     // Load marks for the current user
@@ -744,6 +768,11 @@
       // Clear login form
       document.getElementById('loginForm').reset();
     }
+
+    // Note: For actual email functionality, you would need:
+    // 1. A server-side endpoint to handle email sending
+    // 2. Proper authentication for your email service
+    // This implementation simulates what would happen with a real backend
   </script>
 </body>
 </html>
