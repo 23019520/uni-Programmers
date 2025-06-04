@@ -1,11 +1,13 @@
-[
+{
+  "students": [
     {
-      "name": "unarine",
-      "pin": "1234"
-    },
-    {
-      "name": "vhutshilo",
-      "pin": "1234"
+      "email": "student@example.com",
+      "password": "password123",
+      "name": "Student Name",
+      "marks": [
+        {"assignment": 1, "mark": "95%", "submitted": true},
+        {"assignment": 2, "mark": "Pending", "submitted": true}
+      ]
     }
   ]
-  
+}
