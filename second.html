@@ -6,84 +6,255 @@
   <link rel="stylesheet" href="style.css">
   <title>Second Year Modules | Uni Programmers Academy</title>
   <style>
-    /* Additional styles specific to this page */
+    /* Blue-Purple Color Palette */
+    :root {
+      --blue: #54a0ff;
+      --purple: #5f27cd;
+      --light-purple: #9b59b6;
+      --mint: #1dd1a1;
+      --soft-white: #f9f9ff;
+      --dark: #341f97;
+    }
+    
+    body {
+      background-color: var(--soft-white);
+      font-family: 'Comic Neue', cursive, sans-serif;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: white;
+      border-radius: 50px;
+      padding: 10px 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .nav-list a {
+      color: var(--dark);
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    
+    .nav-list a:hover {
+      color: var(--light-purple);
+      text-decoration: none;
+      transform: scale(1.05);
+    }
+    
+    .menu-btn {
+      background: var(--purple);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .menu-btn:hover {
+      background: var(--light-purple);
+      transform: rotate(90deg);
+    }
+    
+    /* Main Content */
+    .main-content {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      border-radius: 20px;
+      color: white;
+      margin: 20px 0;
+      box-shadow: 0 8px 25px rgba(95, 39, 205, 0.3);
+    }
+    
+    .intro-heading {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    }
+    
+    .main-heading {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    }
+    
+    .main-content p {
+      font-size: 1.2rem;
+    }
+    
+    /* Modules Section */
+    .section-title h1 {
+      color: var(--purple);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h1:after {
+      content: "✨";
+      position: absolute;
+      right: -30px;
+      top: -10px;
+    }
+    
+    .line {
+      height: 4px;
+      background: linear-gradient(to right, var(--blue), var(--light-purple));
+      width: 100px;
+      margin: 0 auto 30px;
+      border-radius: 2px;
+    }
+    
     .modules-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 25px;
       margin: 40px 0;
     }
     
     .module-card {
       background: white;
-      border-radius: 8px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border: 3px solid white;
     }
     
     .module-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+      border-color: var(--blue);
     }
     
     .module-image {
-      height: 140px;
+      height: 120px;
       background-size: cover;
       background-position: center;
+      position: relative;
+    }
+    
+    .module-image:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: linear-gradient(to bottom right, var(--blue), var(--light-purple));
+      opacity: 0.7;
+      clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
     }
     
     .module-content {
-      padding: 18px;
+      padding: 20px;
+      text-align: center;
     }
     
     .module-code {
       font-size: 22px;
       font-weight: bold;
-      color: #2c3e50;
+      color: var(--purple);
       margin-bottom: 5px;
     }
     
     .module-name {
       color: #7f8c8d;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       font-size: 15px;
     }
     
-    .module-tutor {
-      color: #3498db;
+    .btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: none;
       font-weight: bold;
-      margin-bottom: 12px;
-      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Comic Neue', cursive;
     }
     
-    .module-price {
-      color: #27ae60;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-    
-    .free-badge {
-      background-color: #e74c3c;
+    .btn-primary {
+      background: var(--purple);
       color: white;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      display: inline-block;
-      margin-left: 8px;
+    }
+    
+    .btn-primary:hover {
+      background: var(--blue);
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     
     .back-btn-container {
       text-align: center;
-      margin: 30px 0;
+      margin: 40px 0;
     }
     
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, var(--blue), var(--light-purple));
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--mint);
+      transform: translateY(-3px);
+    }
+    
+    /* Responsive */
     @media (max-width: 1000px) {
       .modules-container {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      
+      .main-heading {
+        font-size: 2.5rem;
       }
     }
+    
+    /* Cute Extras */
+    .module-card:nth-child(1) .module-image:after {
+      background: linear-gradient(to bottom right, var(--blue), var(--mint));
+    }
+    
+    .module-card:nth-child(2) .module-image:after {
+      background: linear-gradient(to bottom right, var(--light-purple), var(--blue));
+    }
+    
+    .module-card:nth-child(3) .module-image:after {
+      background: linear-gradient(to bottom right, var(--purple), var(--light-purple));
+    }
+    
+    .module-card:nth-child(4) .module-image:after {
+      background: linear-gradient(to bottom right, var(--mint), var(--purple));
+    }
+    
+    .module-card:nth-child(5) .module-image:after {
+      background: linear-gradient(to bottom right, var(--blue), var(--dark));
+    }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation -->
@@ -96,13 +267,13 @@
           <li><a href="index.html#about-us">About</a></li>
           <li><a href="index.html#meet-the-team">Contact</a></li>
         </ul>
-        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+        <button class="menu-btn" aria-label="Toggle Menu">☰</button>
       </nav>
 
       <div class="main-content">
-        <h1 class="intro-heading">SECOND YEAR</h3>
-        <h1 class="main-heading">Modules</h5>
-        <p>Select a module to explore resources</p>
+        <h1 class="intro-heading">SECOND YEAR</h1>
+        <h1 class="main-heading">Modules 🖥️</h1>
+        <p>Select a module to explore resources 📚✨</p>
       </div>
     </div>
   </div>
@@ -121,8 +292,9 @@
           <div class="module-image" style="background-image: url('image/algorithms.jpg');"></div>
           <div class="module-content">
             <div class="module-code">COM 2226</div>
+            <div class="module-name"></div>
             <a href="com2226.html">
-              <button class="btn btn-primary">View Module</button>
+              <button class="btn btn-primary">View Module 🚀</button>
             </a>
           </div>
         </div>
@@ -132,8 +304,9 @@
           <div class="module-image" style="background-image: url('image/database.jpg');"></div>
           <div class="module-content">
             <div class="module-code">COM 2224</div>
+            <div class="module-name">Datastructures and algorithms</div>
             <a href="com2224.html">
-              <button class="btn btn-primary">View Module</button>
+              <button class="btn btn-primary">View Module 💾</button>
             </a>
           </div>
         </div>
@@ -143,8 +316,9 @@
           <div class="module-image" style="background-image: url('image/networks.jpg');"></div>
           <div class="module-content">
             <div class="module-code">COM 2229</div>
+            <div class="module-name"></div>
             <a href="com2229.html">
-              <button class="btn btn-primary">View Module</button>
+              <button class="btn btn-primary">View Module 🌐</button>
             </a>
           </div>
         </div>
@@ -154,8 +328,9 @@
           <div class="module-image" style="background-image: url('image/software.jpg');"></div>
           <div class="module-content">
             <div class="module-code">COM 2216</div>
+            <div class="module-name"></div>
             <a href="com2216.html">
-              <button class="btn btn-primary">View Module</button>
+              <button class="btn btn-primary">View Module 🛠️</button>
             </a>
           </div>
         </div>
@@ -165,8 +340,9 @@
           <div class="module-image" style="background-image: url('image/ai.jpg');"></div>
           <div class="module-content">
             <div class="module-code">COM 2228</div>
+            <div class="module-name"></div>
             <a href="com2228.html">
-              <button class="btn btn-primary">View Module</button>
+              <button class="btn btn-primary">View Module 🤖</button>
             </a>
           </div>
         </div>
@@ -174,7 +350,7 @@
       
       <div class="back-btn-container">
         <a href="index.html#services">
-          <button class="btn btn-primary">Back to Services</button>
+          <button class="btn btn-primary">👈 Back to Services</button>
         </a>
       </div>
     </div>
@@ -184,13 +360,13 @@
   <footer id="footer">
     <div class="container">
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#about-us">About</a></li>
-        <li><a href="index.html#meet-the-team">Contact</a></li>
+        <li><a href="index.html">Home 🏠</a></li>
+        <li><a href="index.html#services">Services 🛠️</a></li>
+        <li><a href="index.html#about-us">About ℹ️</a></li>
+        <li><a href="index.html#meet-the-team">Contact ✉️</a></li>
       </ul>
-      <p>UNI.p website by Dzivhani Unarine</p>
-      <p>All rights reserved &copy; 2025 Bright Developments</p>
+      <p>UNI.p website by Dzivhani Unarine 💖</p>
+      <p>All rights reserved &copy; 2025 Bright Developments ✨</p>
     </div>
   </footer>
 
@@ -199,6 +375,17 @@
     // Toggle navigation for mobile view
     document.querySelector('.menu-btn').addEventListener('click', function () {
       document.querySelector('.nav-list').classList.toggle('active');
+      this.textContent = this.textContent === '☰' ? '✕' : '☰';
+    });
+    
+    // Add cute confetti effect when clicking module cards
+    document.querySelectorAll('.module-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (!e.target.closest('a') && !e.target.closest('button')) {
+          // This would be where you add confetti, but we'll just log for now
+          console.log("🎉 Confetti would pop here! 🎉");
+        }
+      });
     });
   </script>
 </body>
