@@ -6,74 +6,125 @@
   <link rel="stylesheet" href="../style.css">
   <title>COM 1321 - OOP | Uni Programmers Academy</title>
   <style>
-    /* Additional styles specific to this page */
+    :root {
+      --primary: #6a5acd; /* Soft purple */
+      --secondary: #ff7eb9; /* Pink */
+      --accent: #7afcff; /* Mint */
+      --text: #2e2e2e;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background-color: var(--light);
+    }
+    
     .module-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 12px;
+      color: white;
+      box-shadow: 0 4px 15px rgba(106, 90, 205, 0.3);
     }
     
     .module-title {
-      font-size: 32px;
-      color: #2c3e50;
-      margin-bottom: 10px;
+      font-size: 28px;
+      margin-bottom: 5px;
+      font-weight: 700;
     }
     
     .module-code {
-      font-size: 24px;
-      color: #7f8c8d;
-      margin-bottom: 20px;
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 10px;
     }
     
     .notes-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
-      margin: 30px 0;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 25px 0;
     }
     
     .note-card {
       background: white;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
     }
     
     .note-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(106, 90, 205, 0.15);
     }
     
     .note-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #2c3e50;
-      margin-bottom: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 10px;
     }
     
     .note-meta {
-      color: #7f8c8d;
-      font-size: 14px;
+      color: #666;
+      font-size: 13px;
       margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
     }
     
     .download-btn {
       display: inline-block;
-      padding: 8px 15px;
-      background-color: #3498db;
+      padding: 6px 12px;
+      background-color: var(--primary);
       color: white;
       text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-      font-size: 14px;
+      border-radius: 6px;
+      transition: all 0.3s;
+      font-size: 13px;
+      width: 100%;
+      text-align: center;
+      border: none;
+      cursor: pointer;
     }
     
     .download-btn:hover {
-      background-color: #2980b9;
+      background-color: #5a4acd;
+      transform: scale(1.02);
     }
     
     .back-btn-container {
       text-align: center;
-      margin: 40px 0;
+      margin: 30px 0;
+    }
+    
+    .btn-primary {
+      background-color: var(--secondary);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+    
+    .btn-primary:hover {
+      background-color: #ff6ba9;
+    }
+    
+    .section-title h1 {
+      font-size: 22px;
+      color: var(--primary);
+    }
+    
+    .line {
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      width: 80px;
+      margin: 8px auto;
+      border-radius: 3px;
     }
   </style>
 </head>
@@ -94,7 +145,7 @@
       <div class="module-header">
         <h1 class="module-title">Object-Oriented Programming</h1>
         <div class="module-code">COM 1321</div>
-        <p>Comprehensive resources for OOP course</p>
+        <p>✨ All your OOP resources in one place</p>
       </div>
     </div>
   </div>
@@ -103,60 +154,75 @@
   <section id="notes">
     <div class="container">
       <div class="section-title">
-        <h1 style="text-align: center;">Course Notes</h1>
+        <h1>Course Notes</h1>
         <div class="line"></div>
       </div>
       
       <div class="notes-container">
         <!-- First Notes -->
         <div class="note-card">
-          <div class="note-title">Introduction to OOP Concepts</div>
-          <div class="note-meta">First notes • PDF • 2.4MB</div>
-          <a href="files\notes\OOP\First notes COM1321.pdf" class="download-btn" download>
-            Download Notes
+          <div class="note-title">First Notes Java</div>
+          <div class="note-meta">
+            <span>PDF</span>
+            <span>2.4MB</span>
+          </div>
+          <a href="files/notes/OOP/First notes COM1321.pdf" class="download-btn" download>
+            Download
           </a>
         </div>
         
         <!-- Java Intro -->
         <div class="note-card">
-          <div class="note-title">Intro to Java Programming</div>
-          <div class="note-meta">By Maeba Vhutshilo • PDF • 3.1MB</div>
-          <a href="../notes/OOP/Intro_to_java_By_Maeba_Vhutshiloo.pdf" class="download-btn" download>
-            Download Notes
+          <div class="note-title">Intro to Java</div>
+          <div class="note-meta">
+            <span>By Vhutshilo</span>
+            <span>3.1MB</span>
+          </div>
+          <a href="files/notes/OOP/Intro to java By Maeba Vhutshiloo.pdf" class="download-btn" download>
+            Download
           </a>
         </div>
         
         <!-- Second Notes -->
         <div class="note-card">
-          <div class="note-title">Advanced OOP Principles</div>
-          <div class="note-meta">Second notes • PDF • 1.8MB</div>
-          <a href="../notes/OOP/second_notes_COM_1321.pdf" class="download-btn" download>
-            Download Notes
+          <div class="note-title">Second Notes Java</div>
+          <div class="note-meta">
+            <span>PDF</span>
+            <span>1.8MB</span>
+          </div>
+          <a href="files/notes/OOP/second notes COM 1321.pdf" class="download-btn" download>
+            Download
           </a>
         </div>
         
         <!-- Third Notes -->
         <div class="note-card">
-          <div class="note-title">Design Patterns</div>
-          <div class="note-meta">Third notes • PDF • 2.7MB</div>
-          <a href="../notes/OOP/Third_notes_COM_1321.pdf" class="download-btn" download>
-            Download Notes
+          <div class="note-title">Third Notes Java</div>
+          <div class="note-meta">
+            <span>PDF</span>
+            <span>2.7MB</span>
+          </div>
+          <a href="files/notes/OOP/Third notes COM 1321.pdf" class="download-btn" download>
+            Download
           </a>
         </div>
         
         <!-- UNI P Academy Notes -->
         <div class="note-card">
-          <div class="note-title">Complete OOP Reference</div>
-          <div class="note-meta">UNI P ACADEMY • PDF • 4.5MB</div>
-          <a href="../notes/OOP/UNI_P_ACADEMY_OOP_NOTES.pdf" class="download-btn" download>
-            Download Notes
+          <div class="note-title">Complete OOP Guide</div>
+          <div class="note-meta">
+            <span>UNI P</span>
+            <span>4.5MB</span>
+          </div>
+          <a href="files/notes/OOP/UNI P ACADEMY OOP NOTES.pdf" class="download-btn" download>
+            Download
           </a>
         </div>
       </div>
       
       <div class="back-btn-container">
-        <a href="../modules/first/com1321.html">
-          <button class="btn btn-primary">Back to First Year Modules</button>
+        <a href="files/modules/first/com1321.html">
+          <button class="btn btn-primary">← Back to Modules</button>
         </a>
       </div>
     </div>

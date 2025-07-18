@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>COM 1226 | Uni Programmers Academy</title>
+  <style>
+    :root {
+      --primary: #6a5acd; /* Soft purple */
+      --secondary: #ff7eb9; /* Pink */
+      --accent: #7afcff; /* Mint */
+      --text: #2e2e2e;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background-color: var(--light);
+      line-height: 1.5;
+    }
+    
+    .module-header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 25px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 16px;
+      color: white;
+      box-shadow: 0 4px 20px rgba(106, 90, 205, 0.3);
+    }
+    
+    .module-title {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    .module-code {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 8px;
+    }
+    
+    .cells-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+      margin: 30px 0;
+    }
+    
+    .cell {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .cell:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(106, 90, 205, 0.2);
+    }
+    
+    .cell-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--primary);
+      text-align: center;
+    }
+    
+    .cell-title {
+      font-size: 1.1rem;
+      font-weight: 650;
+      color: var(--primary);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    .cell-desc {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      flex-grow: 1;
+      text-align: center;
+      line-height: 1.4;
+    }
+    
+    .cell-meta {
+      display: flex;
+      justify-content: space-between;
+      color: #777;
+      font-size: 0.8rem;
+      margin-bottom: 16px;
+      padding: 0 10px;
+    }
+    
+    .cell-btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      width: 90%;
+      margin: 0 auto;
+    }
+    
+    .cell-btn:hover {
+      background-color: #5a4acd;
+      transform: scale(1.03);
+    }
+    
+    .back-btn-container {
+      text-align: center;
+      margin: 35px 0;
+    }
+    
+    .btn-primary {
+      background-color: var(--secondary);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      background-color: #ff6ba9;
+      transform: translateY(-2px);
+    }
+    
+    .section-title h1 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    
+    .line {
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      width: 90px;
+      margin: 10px auto 25px;
+      border-radius: 4px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="main">
+    <div class="container">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#about-us">About</a></li>
+          <li><a href="../index.html#meet-the-team">Contact</a></li>
+        </ul>
+        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+      </nav>
+
+      <div class="module-header">
+        <h1 class="module-title">Computer Systems Fundamentals</h1>
+        <div class="module-code">COM 1226</div>
+        <p>✨ Essential computer architecture concepts</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cells Section -->
+  <section id="cells">
+    <div class="container">
+      <div class="section-title">
+        <h1>Lecture Materials</h1>
+        <div class="line"></div>
+      </div>
+      
+      <div class="cells-container">
+        <!-- Lecture 1 -->
+        <div class="cell">
+          <div class="cell-icon">💻</div>
+          <h3 class="cell-title">Lecture 1</h3>
+          <p class="cell-desc">Introduction to Computer Technology and Basic Architecture</p>
+          <div class="cell-meta">
+            <span>PDF</span>
+            <span>301 KB</span>
+          </div>
+          <a href="files\notes\com1226\COM1226 Lecture 1_cb2e6e471a2661e90b6522d3691fbeec.pdf" class="cell-btn" download>
+            Download Notes
+          </a>
+        </div>
+        
+        <!-- Lecture 2 -->
+        <div class="cell">
+          <div class="cell-icon">🔌</div>
+          <h3 class="cell-title">Lecture 2</h3>
+          <p class="cell-desc">CMOS VLSI Technology and Circuit Design</p>
+          <div class="cell-meta">
+            <span>PDF</span>
+            <span>459 KB</span>
+          </div>
+          <a href="files\notes\com1226\COM1226 Lecture 2_20b88834a6ff4ce6cc1eae794f69c423.pdf" class="cell-btn" download>
+            Download Notes
+          </a>
+        </div>
+        
+        <!-- Lecture 3 -->
+        <div class="cell">
+          <div class="cell-icon">🧩</div>
+          <h3 class="cell-title">Lecture 3</h3>
+          <p class="cell-desc">Logic Gates and Boolean Algebra</p>
+          <div class="cell-meta">
+            <span>PDF</span>
+            <span>121 KB</span>
+          </div>
+          <a href="files\notes\com1226\COM1226 Lecture 3_37a8fbecc91f963a559e263ca7dd3d5e.pdf" class="cell-btn" download>
+            Download Notes
+          </a>
+        </div>
+        
+        <!-- Lecture 4 -->
+        <div class="cell">
+          <div class="cell-icon">🖥️</div>
+          <h3 class="cell-title">Lecture 4</h3>
+          <p class="cell-desc">Computer Components and System-on-Chip Design</p>
+          <div class="cell-meta">
+            <span>PDF</span>
+            <span>348 KB</span>
+          </div>
+          <a href="files\notes\com1226\COM1226 Lecture 4_d0a0febb3fd38aec51720de0b61f6392.pdf" class="cell-btn" download>
+            Download Notes
+          </a>
+        </div>
+        
+        <!-- Lecture 5 -->
+        <div class="cell">
+          <div class="cell-icon">⚡</div>
+          <h3 class="cell-title">Lecture 5</h3>
+          <p class="cell-desc">Advanced Concepts: DMA, Pipelining and DSP</p>
+          <div class="cell-meta">
+            <span>PDF</span>
+            <span>129 KB</span>
+          </div>
+          <a href="files\notes\com1226\COM1226 Lecture 5_733744b38313a5d9aa800a48461d5a0e.pdf" class="cell-btn" download>
+            Download Notes
+          </a>
+        </div>
+        
+        <!-- Study Guide -->
+        <div class="cell">
+          <div class="cell-icon">📘</div>
+          <h3 class="cell-title">Study Guide</h3>
+          <p class="cell-desc">Comprehensive review of all course materials</p>
+          <div class="cell-meta">
+            <span>Full Course</span>
+            <span>172 KB</span>
+          </div>
+          <a href="files\notes\com1226\COM1226- Study Guide_6b0bcfa445eeb0b6363e712349ce767f.pdf" class="cell-btn" download>
+            Download Guide
+          </a>
+        </div>
+      </div>
+      
+      <div class="back-btn-container">
+        <a href="../modules/first/com1226.html" class="btn-primary">
+          ← Back to All Modules
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#about-us">About</a></li>
+        <li><a href="../index.html#meet-the-team">Contact</a></li>
+      </ul>
+      <p>UNI.p website by Dzivhani Unarine</p>
+      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../wings.js"></script>
+</body>
+</html>
