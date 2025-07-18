@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.profile {
+    margin-bottom: 20px;
+}
+
+.profile-info h3 {
+    margin: 0;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.follow-button, .rent-button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.follow-button {
+    background-color: #3498db;
+    color: white;
+}
+
+.rent-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.badges ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.badges ul li {
+    padding: 10px;
+    background-color: #34495e;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.announcements h2, .tracks h2, .explore h2 {
+    margin-top: 0;
+}
+
+.announcement {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.track {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: #3498db;
+    height: 10px;
+}
+
+.explore-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.explore-item {
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.explore-item:hover {
+    background-color: #3498db;
+    color: white;
+}

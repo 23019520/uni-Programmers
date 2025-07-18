@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming Projects - Uni Programmers Academy</title>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --success: #28a745;
+      --danger: #dc3545;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    
+    /* Login Modal */
+    .login-modal {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+    
+    .login-box h2 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+    
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .form-group label {
+      font-weight: 600;
+    }
+    
+    .form-group input {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    
+    .login-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    
+    .login-btn:hover {
+      background-color: #1a252f;
+    }
+    
+    .error-message {
+      color: var(--danger);
+      margin-top: 10px;
+      text-align: center;
+    }
+    
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-list a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: color 0.3s;
+      font-size: 1.1rem;
+    }
+    
+    .nav-list a:hover {
+      color: var(--secondary);
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .user-email {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .logout-btn {
+      background: none;
+      border: none;
+      color: var(--secondary);
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--primary);
+    }
+    
+    /* Main Content */
+    .main-content {
+      text-align: center;
+      padding: 80px 0 60px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      margin-bottom: 40px;
+      border-radius: 0 0 20px 20px;
+    }
+    
+    .intro-heading {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+    
+    .main-heading {
+      font-size: 3rem;
+      margin: 0 0 20px;
+      font-weight: 700;
+    }
+    
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .project-header {
+      padding: 20px;
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .project-title {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    
+    .project-body {
+      padding: 20px;
+    }
+    
+    .project-desc {
+      margin-bottom: 20px;
+      color: #555;
+    }
+    
+    .project-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: var(--light);
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .project-details.expanded {
+      max-height: 500px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .toggle-details {
+      background: none;
+      border: none;
+      color: var(--secondary);
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0;
+      margin-bottom: 15px;
+    }
+    
+    .toggle-details:hover {
+      text-decoration: underline;
+    }
+    
+    .submit-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: #1a252f;
+    }
+    
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #2980b9;
+    }
+    
+    /* Marks Section */
+    .marks-section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 50px 0;
+    }
+    
+    .marks-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .marks-list li {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .marks-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .mark-value {
+      font-weight: 600;
+      color: var(--success);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .footer-text {
+      opacity: 0.8;
+      margin: 5px 0;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+      
+      .nav-list.active {
+        display: flex;
+      }
+      
+      .menu-btn {
+        display: block;
+      }
+      
+      .main-heading {
+        font-size: 2.2rem;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Modal -->
+  <div id="loginModal" class="login-modal">
+    <div class="login-box">
+      <h2>Student Login</h2>
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+        <div id="loginError" class="error-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Content (hidden until login) -->
+  <div id="appContent" style="display: none;">
+    <!-- Navigation -->
+    <nav>
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="#main">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about-us">About</a></li>
+          <li><a href="#meet-the-team">Contact</a></li>
+        </ul>
+        <div class="user-info">
+          <span class="user-email" id="userEmailDisplay"></span>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main">
+      <div class="container">
+        <h1 class="intro-heading">BRIGHT DEV'S</h1>
+        <h1 class="main-heading">Programming Projects</h1>
+        <p>Complete projects and track your progress</p>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="container">
+      <div class="projects-grid" id="projectsContainer"></div>
+    </div>
+
+    <!-- Marks Section -->
+    <div class="container">
+      <div class="marks-section">
+        <h2>Your Marks</h2>
+        <p>View your assignment marks below</p>
+        <ul class="marks-list" id="marksList"></ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="#main">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about-us">About</a></li>
+          <li><a href="#meet-the-team">Contact</a></li>
+        </ul>
+        <p class="footer-text">UNI.p website by Dzivhani Unarine</p>
+        <p class="footer-text">All rights reserved &copy; 2025 Bright Developments</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Current user session
+    let currentUser = null;
+    let identitiesData = null;
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', async function() {
+      try {
+        // Load identities.json from the same directory
+        const response = await fetch('identities.json');
+        
+        if (!response.ok) {
+          throw new Error('Failed to load identities');
+        }
+        
+        identitiesData = await response.json();
+        console.log('Successfully loaded identities.json');
+        
+        // Check if user is already logged in (from sessionStorage)
+        const savedUser = sessionStorage.getItem('currentUser');
+        if (savedUser) {
+          currentUser = JSON.parse(savedUser);
+          initApp();
+        } else {
+          // Show login modal if not logged in
+          document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('loginEmail').value;
+          const password = document.getElementById('loginPassword').value;
+          
+          // Authenticate user
+          authenticateUser(email, password);
+        });
+
+      } catch (error) {
+        console.error('Error loading identities.json:', error);
+        document.getElementById('loginError').textContent = 'System error: Could not load student data';
+        // Fallback to allow login with sample data (remove in production)
+        identitiesData = {
+          "students": [
+            {
+              "email": "student1@example.com",
+              "password": "password123",
+              "name": "John Doe",
+              "marks": [
+                {"assignment": 1, "mark": "95%", "submitted": true},
+                {"assignment": 2, "mark": "88%", "submitted": true},
+                {"assignment": 3, "mark": "Pending", "submitted": false}
+              ]
+            },
+            {
+              "email": "student2@example.com",
+              "password": "password456",
+              "name": "Jane Smith",
+              "marks": [
+                {"assignment": 1, "mark": "85%", "submitted": true},
+                {"assignment": 2, "mark": "90%", "submitted": true},
+                {"assignment": 4, "mark": "78%", "submitted": true}
+              ]
+            }
+          ]
+        };
+      }
+    });
+
+    // Authenticate user against identities.json
+    function authenticateUser(email, password) {
+      if (!identitiesData || !identitiesData.students) {
+        document.getElementById('loginError').textContent = 'System error: Could not load student data';
+        return;
+      }
+      
+      const student = identitiesData.students.find(s => 
+        s.email === email && s.password === password
+      );
+      
+      if (student) {
+        // Login successful
+        currentUser = {
+          email: student.email,
+          name: student.name || student.email, // Fallback to email if name not provided
+          marks: student.marks || [] // Ensure marks array exists
+        };
+        
+        // Save to session storage
+        sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        // Hide login modal and show app content
+        document.getElementById('loginModal').style.display = 'none';
+        document.getElementById('loginError').textContent = '';
+        
+        // Initialize the app
+        initApp();
+      } else {
+        // Login failed
+        document.getElementById('loginError').textContent = 'Invalid email or password';
+      }
+    }
+
+    // Initialize the application after login
+    function initApp() {
+      // Show app content
+      document.getElementById('appContent').style.display = 'block';
+      
+      // Display user email
+      document.getElementById('userEmailDisplay').textContent = currentUser.email;
+      
+      // Load projects
+      loadProjects();
+      
+      // Load marks
+      loadMarks();
+      
+      // Set up mobile menu toggle
+      document.querySelector('.menu-btn').addEventListener('click', function() {
+        document.querySelector('.nav-list').classList.toggle('active');
+      });
+    }
+
+    // Load projects into the grid
+    function loadProjects() {
+      const projectsContainer = document.getElementById('projectsContainer');
+      projectsContainer.innerHTML = '';
+      
+      const projects = [
+        {
+          id: 1,
+          title: "1. Hello World Printer",
+          description: "Create a Java program that prints a welcome message or poem."
+        },
+        {
+          id: 2,
+          title: "2. Name Echoer Using Scanner",
+          description: "Write a program that asks for and greets the user by name."
+        },
+        {
+          id: 3,
+          title: "3. Simple Arithmetic Calculator",
+          description: "Build a console calculator for basic operations."
+        },
+        {
+          id: 4,
+          title: "4. Even/Odd Checker",
+          description: "Determine if a number is even using an if statement."
+        },
+        {
+          id: 5,
+          title: "5. Grade Evaluator",
+          description: "Convert test scores to letter grades with else if chains."
+        },
+        {
+          id: 6,
+          title: "6. Age Category Checker",
+          description: "Categorize ages using nested if statements."
+        },
+        {
+          id: 7,
+          title: "7. Quadratic Equation Solver",
+          description: "Solve quadratic equations using the quadratic formula."
+        },
+        {
+          id: 8,
+          title: "8. Animal & Dog Inheritance",
+          description: "Create Dog class inheriting from Animal with method overriding."
+        },
+        {
+          id: 9,
+          title: "9. Shape Area Comparison",
+          description: "Create Shape hierarchy with area comparison logic."
+        },
+        {
+          id: 10,
+          title: "10. Mini Bank System",
+          description: "Implement bank accounts with inheritance and transaction rules."
+        }
+      ];
+
+      projects.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        
+        // Check if this project has been submitted
+        const projectMark = currentUser.marks.find(m => m.assignment === project.id);
+        const submissionStatus = projectMark?.submitted || false;
+        
+        projectCard.innerHTML = `
+          <div class="project-header">
+            <h3 class="project-title">${project.title}</h3>
+          </div>
+          <div class="project-body">
+            <p class="project-desc">${project.description}</p>
+            ${submissionStatus ? 
+              `<p style="color: var(--success); font-weight: 600;">
+                Submitted ✓ ${projectMark.mark ? `(Mark: ${projectMark.mark})` : ''}
+              </p>` : 
+              `<form class="submit-form" onsubmit="submitProject(event, ${project.id})">
+                <input type="file" id="file-${project.id}" required>
+                <button type="submit" class="btn btn-secondary">Submit Project</button>
+              </form>`
+            }
+          </div>
+        `;
+        projectsContainer.appendChild(projectCard);
+      });
+    }
+
+    // Submit project with email functionality
+    async function submitProject(event, projectId) {
+      event.preventDefault();
+      
+      const fileInput = document.getElementById(`file-${projectId}`);
+      const file = fileInput.files[0];
+      
+      if (!file) {
+        alert('Please select a file to submit');
+        return;
+      }
+      
+      // Create form data to send
+      const formData = new FormData();
+      formData.append('email', currentUser.email);
+      formData.append('projectId', projectId);
+      formData.append('file', file);
+      formData.append('recipient', '23019520@mvula.univen.ac.za');
+      
+      try {
+        // In a real implementation, you would send this to your server
+        // Here's a simulation that would work with a proper backend:
+        
+        // This is a simulation - in production, you would actually send to your server
+        console.log('Would send email with submission data:', {
+          from: currentUser.email,
+          to: '23019520@mvula.univen.ac.za',
+          subject: `Project ${projectId} Submission from ${currentUser.email}`,
+          text: `Student ${currentUser.email} has submitted project ${projectId}`,
+          attachments: [file.name]
+        });
+        
+        // Update UI to show submission
+        const projectMark = currentUser.marks.find(m => m.assignment === projectId);
+        
+        if (projectMark) {
+          projectMark.submitted = true;
+          if (!projectMark.mark) {
+            projectMark.mark = "Pending";
+          }
+        } else {
+          currentUser.marks.push({
+            assignment: projectId,
+            mark: "Pending",
+            submitted: true
+          });
+        }
+        
+        // Update session storage
+        sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        // Reload projects to show updated status
+        loadProjects();
+        
+        // Reload marks
+        loadMarks();
+        
+        // Show success message
+        alert(`Project ${projectId} submitted successfully! An email has been sent to your instructor.`);
+        
+      } catch (error) {
+        console.error('Error submitting project:', error);
+        alert('Error submitting project. Please try again.');
+      }
+    }
+
+    // Load marks for the current user
+    function loadMarks() {
+      const marksList = document.getElementById('marksList');
+      marksList.innerHTML = '';
+      
+      if (!currentUser.marks || currentUser.marks.length === 0) {
+        marksList.innerHTML = '<li>No marks recorded yet</li>';
+        return;
+      }
+      
+      currentUser.marks.forEach(mark => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>Assignment ${mark.assignment}</span>
+          <span class="mark-value">${mark.mark || 'Pending'}</span>
+        `;
+        marksList.appendChild(li);
+      });
+    }
+
+    // Logout function
+    function logout() {
+      // Clear session
+      sessionStorage.removeItem('currentUser');
+      currentUser = null;
+      
+      // Hide app content and show login modal
+      document.getElementById('appContent').style.display = 'none';
+      document.getElementById('loginModal').style.display = 'flex';
+      
+      // Clear login form
+      document.getElementById('loginForm').reset();
+    }
+
+    // Note: For actual email functionality, you would need:
+    // 1. A server-side endpoint to handle email sending
+    // 2. Proper authentication for your email service
+    // This implementation simulates what would happen with a real backend
+  </script>
+</body>
+</html>

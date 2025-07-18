@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to your external stylesheet if you prefer -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Explore Services - Uni Programmers Academy</title>
+  <!-- Additional CSS for layout, separate cells, and dynamic content -->
+  
+</head>
+<body>
+  
+<section>
+  <h2>this page is coming soon...</h2>
+  <p>for more information whatsapp the developer <p>WhatsApp: <a href="https://wa.me/+27798616203" target="_blank" rel="noopener noreferrer" style="color: blue;">Message on WhatsApp</a></p></p>
+</section>
+  
+  <footer id="footer">
+    <div class="container">
+      <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="footer-logo" />
+      <ul class="footer-links">
+        <li><a href="index.html#main">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about-us">About</a></li>
+        <li><a href="index.html#footer">Contact</a></li>
+      </ul>
+      <p>UNI.p website by Dzivhani Unarine</p>
+      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle navigation for mobile view
+    const navBtn = document.querySelector('.menu-btn');
+    const navList = document.querySelector('.nav-list');
+
+    navBtn.addEventListener("click", () => {
+      navList.classList.toggle('active');
+    });
+
+    // Function to load dynamic content under each cell
+    function showFiles(btn, category) {
+      const cell = btn.parentNode;
+      const display = cell.querySelector('.files-display');
+
+      // Toggle display: if visible, hide it; otherwise, load content.
+      if (display.style.display === "block") {
+        display.style.display = "none";
+        display.innerHTML = "";
+        return;
+      }
+
+      let filesHTML = '';
+
+      if (category === 'books') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+              <h4>Introduction to Java</h4>
+              <p>A beginner-friendly guide to Java programming.</p>
+              <a href="/files/books/com1321/java_intro.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'notes') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+              <h4>Java Lecture Notes</h4>
+              <p>Comprehensive notes on Java programming concepts.</p>
+              <a href="/files/notes/com1321/java_notes.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'exams') {
+        filesHTML = `
+          <div class="module">
+            <h3>COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+              <h4>Final Exam 2023</h4>
+              <p>Past exam paper covering Java and OOP concepts.</p>
+              <a href="/files/exams/com1321/final_2023.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </div>
+        `;
+      } else if (category === 'unip') {
+        filesHTML = `
+          <div class="module">
+            <h3>UNI.p Exclusive - OBJECT ORIENTED PROGRAMMING</h3>
+            <div class="file-item">
+              <h4>Advanced Java Topics</h4>
+              <p>Exclusive content covering advanced Java techniques.</p>
+              <a href="/files/unip/com1321/advanced_java.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </div>
+        `;
+      } else {
+        filesHTML = '<p>No files available for this category.</p>';
+      }
+
+      display.innerHTML = filesHTML;
+      display.style.display = "block";
+    }
+  </script>
+</body>
+</html>
