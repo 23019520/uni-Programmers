@@ -1,137 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
   <title>Data Structures | Uni Programmers Academy</title>
   <style>
+    /* Blue-Purple Color Palette */
     :root {
-      --primary: #6a5acd; /* Soft purple */
-      --secondary: #ff7eb9; /* Pink */
-      --accent: #7afcff;    /* Mint */
-      --text: #2e2e2e;
-      --light: #f8f9fa;
+      --blue: #54a0ff;
+      --purple: #5f27cd;
+      --light-purple: #9b59b6;
+      --mint: #1dd1a1;
+      --soft-white: #f9f9ff;
+      --dark: #341f97;
     }
-
+    
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text);
-      background-color: var(--light);
+      background-color: var(--soft-white);
+      font-family: 'Comic Neue', cursive, sans-serif;
     }
-
+    
+    /* Navigation */
+    nav {
+      background-color: white;
+      border-radius: 50px;
+      padding: 10px 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .nav-list a {
+      color: var(--dark);
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    
+    .nav-list a:hover {
+      color: var(--light-purple);
+      text-decoration: none;
+      transform: scale(1.05);
+    }
+    
+    .menu-btn {
+      background: var(--purple);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .menu-btn:hover {
+      background: var(--light-purple);
+      transform: rotate(90deg);
+    }
+    
+    /* Module Header */
     .module-header {
       text-align: center;
-      margin-bottom: 30px;
-      padding: 20px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: 12px;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      border-radius: 20px;
       color: white;
-      box-shadow: 0 4px 15px rgba(106, 90, 205, 0.3);
+      margin: 20px 0 40px;
+      box-shadow: 0 8px 25px rgba(95, 39, 205, 0.3);
     }
-
+    
     .module-title {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .module-subtitle {
-      font-size: 18px;
-      opacity: 0.9;
+      font-size: 2.5rem;
       margin-bottom: 10px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
     }
-
+    
+    .module-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+    
+    /* Notes Section */
+    .section-title h1 {
+      color: var(--purple);
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h1:after {
+      content: "✨";
+      position: absolute;
+      right: -30px;
+      top: -10px;
+    }
+    
+    .line {
+      height: 4px;
+      background: linear-gradient(to right, var(--blue), var(--light-purple));
+      width: 100px;
+      margin: 0 auto 30px;
+      border-radius: 2px;
+    }
+    
     .notes-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
-      margin: 25px 0;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
     }
-
+    
     .note-card {
       background: white;
-      border-radius: 12px;
-      padding: 18px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
-      border: 1px solid rgba(0,0,0,0.05);
+      border: 3px solid white;
+      text-align: center;
     }
-
+    
     .note-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(106, 90, 205, 0.15);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+      border-color: var(--blue);
     }
-
+    
+    .note-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--purple);
+    }
+    
     .note-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--primary);
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--dark);
       margin-bottom: 10px;
     }
-
+    
     .note-meta {
       color: #666;
-      font-size: 13px;
-      margin-bottom: 15px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
       display: flex;
       justify-content: space-between;
+      padding: 0 20px;
     }
-
+    
     .download-btn {
       display: inline-block;
-      padding: 6px 12px;
-      background-color: var(--primary);
+      padding: 10px 20px;
+      background: var(--purple);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 50px;
       transition: all 0.3s;
-      font-size: 13px;
-      width: 100%;
-      text-align: center;
+      font-weight: bold;
       border: none;
       cursor: pointer;
+      font-family: 'Comic Neue', cursive;
     }
-
+    
     .download-btn:hover {
-      background-color: #5a4acd;
-      transform: scale(1.02);
+      background: var(--blue);
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
+    
     .back-btn-container {
       text-align: center;
-      margin: 30px 0;
+      margin: 40px 0;
     }
-
+    
     .btn-primary {
-      background-color: var(--secondary);
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
+      background: var(--purple);
       color: white;
-      transition: background-color 0.3s;
+      padding: 10px 25px;
+      border-radius: 50px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Comic Neue', cursive;
     }
-
+    
     .btn-primary:hover {
-      background-color: #ff6ba9;
+      background: var(--blue);
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
-    .section-title h1 {
-      font-size: 22px;
-      color: var(--primary);
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, var(--blue), var(--light-purple));
+      color: white;
+      padding: 30px 0;
       text-align: center;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
     }
-
-    .line {
-      height: 3px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      width: 80px;
-      margin: 8px auto;
-      border-radius: 3px;
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--mint);
+      transform: translateY(-3px);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .notes-container {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+      
+      .module-title {
+        font-size: 2rem;
+      }
+      
+      .module-subtitle {
+        font-size: 1.2rem;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation -->
@@ -144,13 +249,13 @@
           <li><a href="../index.html#about-us">About</a></li>
           <li><a href="../index.html#meet-the-team">Contact</a></li>
         </ul>
-        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+        <button class="menu-btn" aria-label="Toggle Menu">☰</button>
       </nav>
 
       <div class="module-header">
-        <h1 class="module-title">Data Structures and Algorithms</h1>
-        <div class="module-subtitle">📘 Computer Science Fundamentals</div>
-        <p>✨ Essential resources for mastering data structures</p>
+        <h1 class="module-title">Data Structures & Algorithms</h1>
+        <div class="module-subtitle">Computer Science Fundamentals 🧠</div>
+        <p>Master the building blocks of programming ✨</p>
       </div>
     </div>
   </div>
@@ -159,39 +264,41 @@
   <section id="notes">
     <div class="container">
       <div class="section-title">
-        <h1>Course Materials</h1>
+        <h1 style="text-align: center;">Course Materials</h1>
         <div class="line"></div>
       </div>
       
       <div class="notes-container">
         <!-- Big O Notation -->
         <div class="note-card">
-          <div class="note-title">Big O Notation</div>
+          <div class="note-icon">📊</div>
+          <h3 class="note-title">Big O Notation</h3>
           <div class="note-meta">
-            <span>PDF</span>
+            <span>Fundamentals</span>
             <span>1.8MB</span>
           </div>
-          <a href="files/notes/Data structures and algorithms/Big O.pdf" class="download-btn" download>
-            Download
+          <a href="../files/notes/Data structures and algorithms/Big O.pdf" class="download-btn" download>
+            Download Notes
           </a>
         </div>
         
-        <!-- Introduction to DS -->
+        <!-- Introduction -->
         <div class="note-card">
-          <div class="note-title">Intro to Data Structures</div>
+          <div class="note-icon">📚</div>
+          <h3 class="note-title">Intro to Data Structures</h3>
           <div class="note-meta">
-            <span>PDF</span>
+            <span>Basic Concepts</span>
             <span>2.3MB</span>
           </div>
-          <a href="files/notes/Data structures and algorithms/intro.pdf" class="download-btn" download>
-            Download
+          <a href="../files/notes/Data structures and algorithms/intro.pdf" class="download-btn" download>
+            Download Notes
           </a>
         </div>
       </div>
-
+      
       <div class="back-btn-container">
-        <a href="../modules/datastructures.html">
-          <button class="btn-primary">← Back to Modules</button>
+        <a href="../modules/datastructures.html" class="btn-primary">
+          ← Back to Modules
         </a>
       </div>
     </div>
@@ -201,17 +308,24 @@
   <footer id="footer">
     <div class="container">
       <ul class="footer-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html#services">Services</a></li>
-        <li><a href="../index.html#about-us">About</a></li>
-        <li><a href="../index.html#meet-the-team">Contact</a></li>
+        <li><a href="../index.html">Home 🏠</a></li>
+        <li><a href="../index.html#services">Services 🛠️</a></li>
+        <li><a href="../index.html#about-us">About ℹ️</a></li>
+        <li><a href="../index.html#meet-the-team">Contact ✉️</a></li>
       </ul>
-      <p>UNI.p website by Dzivhani Unarine</p>
-      <p>&copy; 2025 Bright Developments. All rights reserved.</p>
+      <p>UNI.p website by Dzivhani Unarine 💖</p>
+      <p>All rights reserved &copy; 2025 Bright Developments ✨</p>
     </div>
   </footer>
 
   <!-- JavaScript -->
   <script src="../wings.js"></script>
+  <script>
+    // Toggle navigation for mobile view
+    document.querySelector('.menu-btn').addEventListener('click', function () {
+      document.querySelector('.nav-list').classList.toggle('active');
+      this.textContent = this.textContent === '☰' ? '✕' : '☰';
+    });
+  </script>
 </body>
 </html>
