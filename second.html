@@ -1,170 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
-  <title>Second Year Resources - Uni Programmers Academy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Second Year Modules | Uni Programmers Academy</title>
   <style>
-    /* Consistent Styling with First Year */
-    .explore-options {
+    /* Additional styles specific to this page */
+    .modules-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
     }
-
-    .explore-option {
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      overflow: hidden;
-      cursor: pointer;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .explore-option:hover {
-      transform: translateY(-5px);
-    }
-
-    .explore-option img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .explore-option h3 {
-      color: #2c3e50;
-      margin: 1rem 0;
-      font-size: 1.5rem;
-    }
-
-    .explore-option p {
-      color: #7f8c8d;
-      line-height: 1.6;
-    }
-
-    .files-display {
-      margin-top: 2rem;
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .module {
-      margin-bottom: 2rem;
+    
+    .module-card {
       background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-
-    .module h3 {
-      color: #4a90e2;
-      margin-bottom: 1rem;
+    
+    .module-card:hover {
+      transform: translateY(-8px);
     }
-
-    .file-item {
-      padding: 1rem;
-      margin: 1rem 0;
-      border-left: 4px solid #4a90e2;
-      background: #f8f9fa;
-      border-radius: 6px;
+    
+    .module-image {
+      height: 140px;
+      background-size: cover;
+      background-position: center;
     }
-
-    .file-item h4 {
+    
+    .module-content {
+      padding: 18px;
+    }
+    
+    .module-code {
+      font-size: 22px;
+      font-weight: bold;
       color: #2c3e50;
-      margin-bottom: 0.5rem;
+      margin-bottom: 5px;
     }
-
-    .file-item a {
-      color: #4a90e2;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+    
+    .module-name {
+      color: #7f8c8d;
+      margin-bottom: 10px;
+      font-size: 15px;
     }
-
-    .file-item a:hover {
-      text-decoration: underline;
+    
+    .module-tutor {
+      color: #3498db;
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 14px;
     }
-
-    .active-category {
-      border: 2px solid #4a90e2;
-      box-shadow: 0 4px 6px rgba(74, 144, 226, 0.1);
+    
+    .module-price {
+      color: #27ae60;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    .free-badge {
+      background-color: #e74c3c;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      display: inline-block;
+      margin-left: 8px;
+    }
+    
+    .back-btn-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    @media (max-width: 1000px) {
+      .modules-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Main Header Section -->
+  <!-- Navigation -->
   <div id="main">
     <div class="container">
       <nav>
-        <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="logo" />
         <ul class="nav-list">
-          <li><a href="index.html#main">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="index.html#services">Services</a></li>
           <li><a href="index.html#about-us">About</a></li>
-          <li><a href="index.html#footer">Contact</a></li>
+          <li><a href="index.html#meet-the-team">Contact</a></li>
         </ul>
         <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
       </nav>
 
       <div class="main-content">
-        <h1 class="main-heading">FIND AND DOWNLOAD</h1>
-        <h3>SECOND YEAR FIRST SEMESTER</h3>
+        <h1 class="intro-heading">SECOND YEAR</h3>
+        <h1 class="main-heading">Modules</h5>
+        <p>Select a module to explore resources</p>
       </div>
     </div>
   </div>
 
-  <!-- Explore Services Section -->
-  <section id="explore-services">
+  <!-- Modules Section -->
+  <section id="modules">
     <div class="container">
       <div class="section-title">
-        <h1 style="text-align: center;">Explore Our Resources</h1>
+        <h1 style="text-align: center;">Second Year Modules</h1>
         <div class="line"></div>
       </div>
       
-      <div class="explore-options">
-        <!-- Books Card -->
-        <div class="explore-option" onclick="showFiles('books')">
-          <img src="image/books2.jpg" alt="Advanced Programming Books">
-          <h3><i class="fas fa-book-open"></i> Books</h3>
-          <p>Access advanced textbooks and specialized reference materials.</p>
+      <div class="modules-container">
+        <!-- COM 2226 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/algorithms.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">COM 2226</div>
+            <a href="com2226.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
+          </div>
         </div>
-
-        <!-- Notes Card -->
-        <div class="explore-option" onclick="showFiles('notes')">
-          <img src="image/notes2.jpg" alt="Detailed Course Notes">
-          <h3><i class="fas fa-file-alt"></i> Notes</h3>
-          <p>Comprehensive lecture notes and research summaries.</p>
+        
+        <!-- COM 2224 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/database.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">COM 2224</div>
+            <a href="com2224.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
+          </div>
         </div>
-
-        <!-- Exams Card -->
-        <div class="explore-option" onclick="showFiles('exams')">
-          <img src="image/exams2.jpg" alt="Exam Preparation Materials">
-          <h3><i class="fas fa-clipboard-list"></i> Exams</h3>
-          <p>Past papers with model solutions and marking schemes.</p>
+        
+        <!-- COM 2229 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/networks.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">COM 2229</div>
+            <a href="com2229.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
+          </div>
         </div>
-
-        <!-- UNI.p Card -->
-        <div class="explore-option" onclick="showFiles('unip')">
-          <img src="image/unip-special.jpg" alt="UNI.p Exclusive Resources">
-          <h3><i class="fas fa-star"></i> UNI.p</h3>
-          <p>Premium resources for advanced learners.</p>
+        
+        <!-- COM 2216 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/software.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">COM 2216</div>
+            <a href="com2216.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
+          </div>
+        </div>
+        
+        <!-- COM 2228 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/ai.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">COM 2228</div>
+            <a href="com2228.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
+          </div>
         </div>
       </div>
-
-      <!-- Dynamic Files Display -->
-      <div id="files-display" class="files-display">
-        <!-- Content loaded dynamically -->
+      
+      <div class="back-btn-container">
+        <a href="index.html#services">
+          <button class="btn btn-primary">Back to Services</button>
+        </a>
       </div>
     </div>
   </section>
@@ -172,50 +183,23 @@
   <!-- Footer Section -->
   <footer id="footer">
     <div class="container">
-      <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="footer-logo" />
       <ul class="footer-links">
-        <li><a href="index.html#main">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#about-us">About</a></li>
-        <li><a href="index.html#footer">Contact</a></li>
+        <li><a href="index.html#meet-the-team">Contact</a></li>
       </ul>
       <p>UNI.p website by Dzivhani Unarine</p>
       <p>All rights reserved &copy; 2025 Bright Developments</p>
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-    // Enhanced JavaScript with animations
-    let currentCategory = null;
-
-    function showFiles(category) {
-      const filesDisplay = document.getElementById('files-display');
-      const cards = document.querySelectorAll('.explore-option');
-
-      // Remove active class from all cards
-      cards.forEach(card => card.classList.remove('active-category'));
-
-      // Add active class to selected category
-      event.currentTarget.classList.add('active-category');
-
-      // Animate transition
-      if (currentCategory !== category) {
-        filesDisplay.style.opacity = '0';
-        setTimeout(() => {
-          filesDisplay.innerHTML = generateFileContent(category);
-          filesDisplay.style.opacity = '1';
-          currentCategory = category;
-        }, 300);
-      }
-    }
-
-    // Mobile menu toggle
-    document.querySelector('.menu-btn').addEventListener('click', () => {
+    // Toggle navigation for mobile view
+    document.querySelector('.menu-btn').addEventListener('click', function () {
       document.querySelector('.nav-list').classList.toggle('active');
     });
-
-    // Keep the existing content generation logic from your original code
-    // (The long HTML strings for each category remain unchanged)
   </script>
 </body>
 </html>

@@ -1,228 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <title>Third Year Resources - Uni Programmers Academy</title>
-  <style>
-    /* Consistent Styling with Previous Years */
-    .explore-options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .explore-option {
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      overflow: hidden;
-      cursor: pointer;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .explore-option:hover {
-      transform: translateY(-5px);
-    }
-
-    .explore-option img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .explore-option h3 {
-      color: #2c3e50;
-      margin: 1rem 0;
-      font-size: 1.5rem;
-    }
-
-    .explore-option p {
-      color: #7f8c8d;
-      line-height: 1.6;
-    }
-
-    .files-display {
-      margin-top: 2rem;
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .module {
-      margin-bottom: 2rem;
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .module h3 {
-      color: #4a90e2;
-      margin-bottom: 1rem;
-    }
-
-    .file-item {
-      padding: 1rem;
-      margin: 1rem 0;
-      border-left: 4px solid #4a90e2;
-      background: #f8f9fa;
-      border-radius: 6px;
-    }
-
-    .file-item h4 {
-      color: #2c3e50;
-      margin-bottom: 0.5rem;
-    }
-
-    .file-item a {
-      color: #4a90e2;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .file-item a:hover {
-      text-decoration: underline;
-    }
-
-    .active-category {
-      border: 2px solid #4a90e2;
-      box-shadow: 0 4px 6px rgba(74, 144, 226, 0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <!-- Main Header Section -->
-  <div id="main">
-    <div class="container">
-      <nav>
-        <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="logo">
-        <ul class="nav-list">
-          <li><a href="index.html#main">Home</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#about-us">About</a></li>
-          <li><a href="index.html#footer">Contact</a></li>
-        </ul>
-        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
-      </nav>
-
-      <div class="main-content">
-        <h1 class="main-heading">FIND AND DOWNLOAD</h1>
-        <h3>THIRD YEAR FIRST SEMESTER</h3>
-      </div>
+    <div class="module">
+        <h3>COM1321 - OOP</h3>
+        <div class="file-item">
+            <h4>Introduction to Java</h4>
+            <p>A beginner-friendly guide to Java programming.</p>
+            <a href="/files/books/com1321/java_intro.pdf" download>Download</a>
+            <p>~school guide</p>
+        </div>
+        <div class="file-item">
+            <h4>variables in Java</h4>
+            <p>Learn about variables using Java.</p>
+            <a href="/files/books/com1321/data_structures_java.pdf" download>Download</a>
+            <p>~UNIp tutorial notes</p>
+        </div>
+        <div class="file-item">
+            <h4>arrays in Java</h4>
+            <p>Learn about arrays using Java.</p>
+            <a href="/files/books/com1321/data_structures_java.pdf" download>Download</a>
+            <p>~UNIp tutorial notes</p>
+        </div>
     </div>
-  </div>
-
-  <!-- Explore Services Section -->
-  <section id="explore-services">
-    <div class="container">
-      <div class="section-title">
-        <h1 style="text-align: center;">Explore Our Resources</h1>
-        <div class="line"></div>
-      </div>
-      
-      <div class="explore-options">
-        <!-- Books Card -->
-        <div class="explore-option" onclick="showFiles('books')">
-          <img src="image/books3.jpg" alt="Advanced Software Engineering Books">
-          <h3><i class="fas fa-book-open"></i> Books</h3>
-          <p>Advanced technical references and professional guides</p>
+    <div class="module">
+        <h3>COM1122 - ....</h3>
+        <div class="file-item">
+            <h4>HTML & CSS Basics</h4>
+            <p>Learn the fundamentals of web development.</p>
+            <a href="/files/books/com1122/html_css.pdf" download>Download</a>
         </div>
-
-        <!-- Notes Card -->
-        <div class="explore-option" onclick="showFiles('notes')">
-          <img src="image/notes3.jpg" alt="Specialized Course Notes">
-          <h3><i class="fas fa-file-alt"></i> Notes</h3>
-          <p>Expert-level lecture notes and research materials</p>
+        <div class="file-item">
+            <h4>JavaScript for Beginners</h4>
+            <p>An introduction to JavaScript programming.</p>
+            <a href="/files/books/com1122/javascript_basics.pdf" download>Download</a>
         </div>
-
-        <!-- Exams Card -->
-        <div class="explore-option" onclick="showFiles('exams')">
-          <img src="image/exams3.jpg" alt="Professional Certification Prep">
-          <h3><i class="fas fa-clipboard-list"></i> Exams</h3>
-          <p>Industry-level practice exams and solutions</p>
-        </div>
-
-        <!-- UNI.p Card -->
-        <div class="explore-option" onclick="showFiles('unip')">
-          <img src="image/unip-pro.jpg" alt="UNI.p Professional Resources">
-          <h3><i class="fas fa-gem"></i> UNI.p</h3>
-          <p>Professional-grade resources for industry preparation</p>
-        </div>
-      </div>
-
-      <!-- Dynamic Files Display -->
-      <div id="files-display" class="files-display">
-        <!-- Content loaded dynamically -->
-      </div>
     </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer id="footer">
-    <div class="container">
-      <img src="/image/logo.png" alt="Uni Programmers Academy Logo" class="footer-logo">
-      <ul class="footer-links">
-        <li><a href="index.html#main">Home</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#about-us">About</a></li>
-        <li><a href="index.html#footer">Contact</a></li>
-      </ul>
-      <p>UNI.p website by Dzivhani Unarine</p>
-      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    <div class="module">
+        <h3>COM1124 - ...</h3>
+        <div class="file-item">
+            <h4>SQL for Beginners</h4>
+            <p>A comprehensive guide to SQL and database management.</p>
+            <a href="/files/books/com1124/sql_basics.pdf" download>Download</a>
+        </div>
+        <div class="file-item">
+            <h4>Database Design</h4>
+            <p>Learn how to design efficient databases.</p>
+            <a href="/files/books/com1124/database_design.pdf" download>Download</a>
+        </div>
     </div>
-  </footer>
-
-  <script>
-    // Enhanced JavaScript with animations
-    let currentCategory = null;
-    const cards = document.querySelectorAll('.explore-option');
-
-    function showFiles(category) {
-      const filesDisplay = document.getElementById('files-display');
-      
-      // Remove active class from all cards
-      cards.forEach(card => card.classList.remove('active-category'));
-      
-      // Add active class to selected card
-      event.currentTarget.classList.add('active-category');
-
-      // Animate transition
-      if (currentCategory !== category) {
-        filesDisplay.style.opacity = '0';
-        setTimeout(() => {
-          filesDisplay.innerHTML = generateFileContent(category);
-          filesDisplay.style.opacity = '1';
-          currentCategory = category;
-        }, 300);
-      }
-    }
-
-    // Content generation function
-    function generateFileContent(category) {
-      let filesHTML = '';
-      
-      // Your existing content generation logic here
-      ${/* Keep the existing if/else structure with third-year content */}
-
-      return filesHTML;
-    }
-
-    // Mobile menu toggle
-    document.querySelector('.menu-btn').addEventListener('click', () => {
-      document.querySelector('.nav-list').classList.toggle('active');
-    });
-  </script>
 </body>
 </html>

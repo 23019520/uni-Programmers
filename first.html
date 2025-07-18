@@ -1,238 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
-  <title>Explore Services - Uni Programmers Academy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>First Year Modules | Uni Programmers Academy</title>
   <style>
-    /* Enhanced Grid Layout */
-    .explore-options {
+    /* Additional styles specific to this page */
+    .modules-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
     }
-
-    /* Modern Card Design */
-    .explore-option {
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      overflow: hidden;
-    }
-
-    .explore-option:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-content {
-      padding: 1.5rem;
-    }
-
-    .explore-option img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 3px solid #4a90e2;
-    }
-
-    .explore-option h3 {
-      color: #2c3e50;
-      margin: 1rem 0;
-      font-size: 1.5rem;
-    }
-
-    .explore-option p {
-      color: #7f8c8d;
-      line-height: 1.6;
-      min-height: 60px;
-    }
-
-    /* Enhanced Button Styling */
-    .btn-primary {
-      background: #4a90e2;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 25px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary:hover {
-      background: #357abd;
-      transform: scale(1.05);
-    }
-
-    /* Improved Files Display */
-    .files-display {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      background: #f8f9fa;
-      margin-top: 1rem;
-    }
-
-    .file-item {
+    
+    .module-card {
       background: white;
-      padding: 1rem;
-      margin: 0.5rem 0;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-
-    .file-item h4 {
+    
+    .module-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .module-image {
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .module-content {
+      padding: 15px;
+    }
+    
+    .module-code {
+      font-size: 20px;
+      font-weight: bold;
       color: #2c3e50;
-      margin-bottom: 0.5rem;
+      margin-bottom: 5px;
     }
-
-    .file-item p {
+    
+    .module-name {
       color: #7f8c8d;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+      margin-bottom: 12px;
+      font-size: 14px;
     }
-
-    .file-item a {
-      color: #4a90e2;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
+    
+    .back-btn-container {
+      text-align: center;
+      margin: 30px 0;
     }
-
-    .file-item a:hover {
-      text-decoration: underline;
-    }
-
-    /* Accessibility Improvements */
-    button:focus {
-      outline: 3px solid #4a90e266;
+    
+    @media (max-width: 1000px) {
+      .modules-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Main Header Section (unchanged) -->
+  <!-- Navigation -->
+  <div id="main">
+    <div class="container">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about-us">About</a></li>
+          <li><a href="index.html#meet-the-team">Contact</a></li>
+        </ul>
+        <button class="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+      </nav>
 
-  <!-- Explore Services Section -->
-  <section id="explore-services">
+      <div class="main-content">
+        <h1 class="intro-heading">FIRST YEAR</h3>
+        <h1 class="main-heading">Modules</h5>
+        <p>Select a module to explore resources</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modules Section -->
+  <section id="modules">
     <div class="container">
       <div class="section-title">
-        <h1 class="section-heading">Explore Our Resources</h1>
+        <h1 style="text-align: center;">First Year Modules</h1>
         <div class="line"></div>
       </div>
-
-      <div class="explore-options">
-        <!-- Books Option -->
-        <article class="explore-option">
-          <img src="image/books.jpg" alt="Stack of academic books">
-          <div class="card-content">
-            <h3>Books</h3>
-            <p>Access comprehensive textbooks and essential reference materials for your courses.</p>
-            <button class="btn btn-primary" onclick="toggleFiles(this, 'books')" aria-expanded="false">
-              <i class="fas fa-book-open"></i>
-              Explore Books
-            </button>
-            <div class="files-display" role="region"></div>
+      
+      <div class="modules-container">
+        <!-- COM 1321 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/programming.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">COM 1321</div>
+            <div class="module-name">Introduction to Programming</div>
+            <a href="com1321.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
           </div>
-        </article>
-
-        <!-- Notes Option -->
-        <article class="explore-option">
-          <img src="image/notes.jpg" alt="Handwritten study notes">
-          <div class="card-content">
-            <h3>Notes</h3>
-            <p>Detailed course summaries and lecture notes compiled by top students.</p>
-            <button class="btn btn-primary" onclick="toggleFiles(this, 'notes')" aria-expanded="false">
-              <i class="fas fa-file-alt"></i>
-              View Notes
-            </button>
-            <div class="files-display" role="region"></div>
+        </div>
+        
+        <!-- COM 1226 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/computer.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">COM 1226</div>
+            <div class="module-name">Computer Systems Fundamentals</div>
+            <a href="com1226.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
           </div>
-        </article>
-
-        <!-- Practice Option -->
-        <article class="explore-option">
-          <img src="image/exams.jpg" alt="Exam answer sheet">
-          <div class="card-content">
-            <h3>Practice</h3>
-            <p>Past exam papers with solutions to test your knowledge and preparation.</p>
-            <button class="btn btn-primary" onclick="window.location.href='practice.html'">
-  <i class="fas fa-clipboard-check"></i>
-  Try Practice
-</button>
-
-            <div class="files-display" role="region"></div>
+        </div>
+        
+        <!-- STAT 1241 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/stats1.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">STAT 1241</div>
+            <div class="module-name">Probability and Statistics I</div>
+            <a href="stat1241.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
           </div>
-        </article>
+        </div>
+        
+        <!-- STAT 1242 -->
+        <div class="module-card">
+          <div class="module-image" style="background-image: url('image/stats2.jpg');"></div>
+          <div class="module-content">
+            <div class="module-code">STAT 1242</div>
+            <div class="module-name">Probability and Statistics II</div>
+            <a href="stat1242.html">
+              <button class="btn btn-primary">View Module</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="back-btn-container">
+        <a href="index.html#services">
+          <button class="btn btn-primary">Back to Services</button>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section (unchanged) -->
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about-us">About</a></li>
+        <li><a href="index.html#meet-the-team">Contact</a></li>
+      </ul>
+      <p>UNI.p website by Dzivhani Unarine</p>
+      <p>All rights reserved &copy; 2025 Bright Developments</p>
+    </div>
+  </footer>
 
+  <!-- JavaScript -->
   <script>
-    // Enhanced toggle function with animations
-    function toggleFiles(btn, category) {
-      const container = btn.parentNode;
-      const filesDisplay = container.querySelector('.files-display');
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-
-      // Toggle aria state
-      btn.setAttribute('aria-expanded', !isExpanded);
-      
-      // Toggle content visibility with animation
-      if (isExpanded) {
-        filesDisplay.style.maxHeight = '0';
-      } else {
-        // Load content only once
-        if (!filesDisplay.innerHTML) {
-          filesDisplay.innerHTML = generateFileContent(category);
-        }
-        filesDisplay.style.maxHeight = filesDisplay.scrollHeight + 'px';
-      }
-    }
-
-    // Data-driven content generation
-    const resources = {
-      books: [{
-        title: 'Sams Teach Yourself Java in 24 Hours',
-        description: 'Comprehensive guide to Java programming with practical examples...',
-        path: '/files/books/Sams.Teach.Yourself.Java.pdf'
-      }],
-      notes: [/*...*/],
-      practice: [/*...*/]
-    };
-
-    function generateFileContent(category) {
-      const items = resources[category];
-      if (!items || !items.length) return '<p class="no-files">No resources available currently.</p>';
-
-      return `
-        <div class="module">
-          <h3 class="module-title">COM1321 - OBJECT ORIENTED PROGRAMMING</h3>
-          ${items.map(item => `
-            <div class="file-item">
-              <h4>${item.title}</h4>
-              <p>${item.description}</p>
-              <a href="${item.path}" target="_blank" rel="noopener">
-                <i class="fas fa-external-link-alt"></i>
-                Open Resource
-              </a>
-            </div>
-          `).join('')}
-        </div>
-      `;
-    }
-
-    // Mobile menu toggle
-    document.querySelector('.menu-btn').addEventListener('click', () => {
+    // Toggle navigation for mobile view
+    document.querySelector('.menu-btn').addEventListener('click', function () {
       document.querySelector('.nav-list').classList.toggle('active');
     });
   </script>
